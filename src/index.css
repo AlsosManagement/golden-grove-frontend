@@ -1,0 +1,4 @@
+/* Minimal reset — GlobalStyles in shared.jsx handles all app styling */
+body {
+  margin: 0;
+}
