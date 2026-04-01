@@ -404,7 +404,7 @@ export default function GoldenGroveRecovery() {
         }} />
 
         <FadeIn style={{ position: "relative", zIndex: 1, maxWidth: 800 }}>
-          <div className="hero-wordmark" style={{ marginBottom: 32 }}>
+          <div className="hero-wordmark" style={{ marginBottom: 32, display: "flex", justifyContent: "center" }}>
             <Wordmark height={72} variant="white" />
           </div>
           <div className="gg-pill" style={{
