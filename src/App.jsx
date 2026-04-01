@@ -396,77 +396,62 @@ export default function GoldenGroveRecovery() {
         minHeight: "100vh", display: "flex", flexDirection: "column",
         justifyContent: "center", alignItems: "center", textAlign: "center",
         padding: "120px 24px 80px",
-        background: B.coffee,
+        background: `linear-gradient(165deg, ${B.coffeeDark} 0%, ${B.coffee} 40%, ${B.butterscotch} 100%)`,
         color: B.white, position: "relative", overflow: "hidden",
       }}>
         {/* Botanical leaf illustrations — per brand guidelines p.18 */}
-        {/* Bottom full-width fern cluster */}
-        <svg style={{ position: "absolute", bottom: -10, left: 0, width: "100%", height: 420, opacity: 0.35 }} viewBox="0 0 1200 420" preserveAspectRatio="xMidYMax slice" fill="none">
-          <g fill={B.dust}>
-            {/* Dense fern fronds rising from bottom */}
-            <path d="M0 420 Q10 350 30 300 Q40 260 60 220 Q50 260 40 310 Q30 360 20 420Z"/>
-            <path d="M20 420 Q35 340 60 280 Q75 230 95 180 Q80 240 65 300 Q45 360 20 420Z"/>
-            <path d="M50 420 Q70 330 100 260 Q120 200 145 150 Q125 220 105 290 Q80 360 50 420Z"/>
-            <path d="M80 420 Q105 320 140 240 Q165 170 195 110 Q170 190 145 270 Q115 350 80 420Z"/>
-            <path d="M120 420 Q150 310 190 220 Q220 150 255 90 Q225 170 195 260 Q160 350 120 420Z"/>
-            <path d="M170 420 Q200 310 240 220 Q270 140 305 70 Q275 160 245 260 Q210 350 170 420Z"/>
-            <path d="M230 420 Q260 320 295 240 Q320 170 350 100 Q325 180 295 270 Q265 350 230 420Z"/>
-            <path d="M290 420 Q315 330 345 260 Q368 195 395 130 Q370 210 340 290 Q315 360 290 420Z"/>
-            <path d="M350 420 Q375 340 400 275 Q420 215 445 155 Q425 230 400 305 Q375 365 350 420Z"/>
-            <path d="M410 420 Q430 350 455 290 Q475 235 500 175 Q480 245 455 315 Q435 370 410 420Z"/>
-            <path d="M470 420 Q490 345 515 280 Q535 220 560 160 Q540 235 515 310 Q495 370 470 420Z"/>
-            <path d="M530 420 Q555 335 585 260 Q608 195 635 130 Q612 210 585 290 Q558 360 530 420Z"/>
-            <path d="M600 420 Q625 330 655 250 Q680 180 710 110 Q685 195 655 280 Q630 355 600 420Z"/>
-            <path d="M670 420 Q695 325 725 240 Q750 170 780 100 Q755 185 725 275 Q700 350 670 420Z"/>
-            <path d="M740 420 Q760 340 785 270 Q805 210 830 150 Q810 225 785 300 Q765 365 740 420Z"/>
-            <path d="M810 420 Q835 330 865 250 Q890 180 920 110 Q895 195 865 280 Q840 355 810 420Z"/>
-            <path d="M880 420 Q900 345 925 280 Q945 220 970 160 Q950 235 925 310 Q905 370 880 420Z"/>
-            <path d="M940 420 Q965 330 995 250 Q1020 180 1050 110 Q1025 195 995 280 Q970 355 940 420Z"/>
-            <path d="M1010 420 Q1035 340 1060 275 Q1080 215 1105 155 Q1085 230 1060 305 Q1040 365 1010 420Z"/>
-            <path d="M1070 420 Q1090 350 1110 290 Q1130 235 1150 175 Q1135 245 1115 315 Q1095 370 1070 420Z"/>
-            <path d="M1130 420 Q1150 345 1170 280 Q1185 230 1200 180 Q1190 240 1175 310 Q1155 370 1130 420Z"/>
-            {/* Leaf details — smaller overlapping fronds */}
-            <path d="M35 420 Q50 370 70 330 Q55 360 45 395Z"/>
-            <path d="M150 420 Q175 350 205 290 Q185 340 165 390Z"/>
-            <path d="M310 420 Q335 355 360 300 Q340 345 320 395Z"/>
-            <path d="M500 420 Q520 360 545 310 Q528 355 510 395Z"/>
-            <path d="M700 420 Q720 355 745 300 Q728 348 710 395Z"/>
-            <path d="M900 420 Q920 360 945 310 Q928 355 910 395Z"/>
-            <path d="M1100 420 Q1115 365 1135 320 Q1120 358 1108 395Z"/>
+        {/* Bottom-left cluster */}
+        <svg style={{ position: "absolute", bottom: -20, left: -40, width: 500, height: 500, opacity: 0.08 }} viewBox="0 0 500 500" fill="none">
+          <g fill={B.gold}>
+            <path d="M80 500 Q90 400 130 350 Q110 380 100 420 Q95 460 80 500Z"/>
+            <path d="M100 500 Q120 380 170 310 Q150 350 135 400 Q120 450 100 500Z"/>
+            <path d="M60 480 Q80 420 100 380 Q90 340 120 280 Q100 330 85 390 Q70 440 60 480Z"/>
+            <path d="M130 500 Q160 360 220 270 Q190 320 170 380 Q150 440 130 500Z"/>
+            <path d="M40 500 Q60 440 70 400 Q65 360 80 310 Q60 370 50 430 Q45 465 40 500Z"/>
+            <path d="M160 500 Q200 340 260 240 Q230 300 200 370 Q180 430 160 500Z"/>
+            <path d="M20 490 Q40 450 55 410 Q50 370 65 320 Q45 380 35 440Z"/>
+            {/* Fern fronds */}
+            <path d="M180 500 Q190 440 210 400 Q220 360 240 330 Q250 300 270 260 Q250 310 240 350 Q225 390 210 430 Q195 465 180 500Z"/>
+            <path d="M200 500 Q220 420 250 350 Q270 300 300 250 Q280 310 260 370 Q240 430 200 500Z"/>
+            <path d="M250 460 Q260 420 280 380 Q290 350 310 310 Q295 350 280 390 Q265 425 250 460Z"/>
           </g>
         </svg>
-        {/* Top-right corner leaf accent */}
-        <svg style={{ position: "absolute", top: -20, right: -30, width: 400, height: 380, opacity: 0.2, transform: "scaleY(-1)" }} viewBox="0 0 400 380" fill="none">
-          <g fill={B.dust}>
-            <path d="M400 380 Q380 300 350 240 Q330 190 300 140 Q320 200 340 270 Q360 330 400 380Z"/>
-            <path d="M380 380 Q355 290 320 220 Q295 160 265 100 Q290 180 315 260 Q345 330 380 380Z"/>
-            <path d="M350 380 Q320 300 285 230 Q260 170 230 110 Q255 185 280 265 Q315 335 350 380Z"/>
-            <path d="M320 380 Q290 310 260 250 Q240 200 215 145 Q235 210 255 280 Q285 340 320 380Z"/>
-            <path d="M290 380 Q265 315 240 260 Q225 215 205 165 Q220 225 235 290 Q260 345 290 380Z"/>
+        {/* Top-right cluster */}
+        <svg style={{ position: "absolute", top: -30, right: -50, width: 450, height: 450, opacity: 0.06, transform: "rotate(180deg)" }} viewBox="0 0 500 500" fill="none">
+          <g fill={B.gold}>
+            <path d="M80 500 Q90 400 130 350 Q110 380 100 420 Q95 460 80 500Z"/>
+            <path d="M100 500 Q120 380 170 310 Q150 350 135 400 Q120 450 100 500Z"/>
+            <path d="M60 480 Q80 420 100 380 Q90 340 120 280 Q100 330 85 390 Q70 440 60 480Z"/>
+            <path d="M130 500 Q160 360 220 270 Q190 320 170 380 Q150 440 130 500Z"/>
+            <path d="M160 500 Q200 340 260 240 Q230 300 200 370 Q180 430 160 500Z"/>
+            <path d="M180 500 Q190 440 210 400 Q220 360 240 330 Q250 300 270 260 Q250 310 240 350 Q225 390 210 430 Q195 465 180 500Z"/>
+            <path d="M200 500 Q220 420 250 350 Q270 300 300 250 Q280 310 260 370 Q240 430 200 500Z"/>
           </g>
         </svg>
-        {/* Top-left line art stems */}
-        <svg style={{ position: "absolute", top: 60, left: 20, width: 200, height: 300, opacity: 0.15 }} viewBox="0 0 200 300" fill="none">
-          <g stroke={B.dust} strokeWidth="1" fill="none">
-            <path d="M40 300 Q50 240 65 190 Q75 150 90 110 Q100 75 110 40"/>
-            <path d="M65 190 Q45 175 30 168"/>
-            <path d="M75 150 Q55 140 40 134"/>
-            <path d="M90 110 Q70 102 58 96"/>
-            <path d="M65 190 Q85 178 100 172"/>
-            <path d="M75 150 Q95 142 108 136"/>
-            <path d="M90 110 Q110 104 122 98"/>
+        {/* Right-side line art leaves */}
+        <svg style={{ position: "absolute", top: "20%", right: -20, width: 300, height: 400, opacity: 0.05 }} viewBox="0 0 300 400" fill="none">
+          <g stroke={B.gold} strokeWidth="1.5" fill="none">
+            <path d="M250 400 Q240 340 220 290 Q210 250 200 210 Q190 170 180 130"/>
+            <path d="M220 290 Q240 270 260 260"/>
+            <path d="M210 250 Q230 235 250 228"/>
+            <path d="M200 210 Q220 198 240 192"/>
+            <path d="M190 170 Q210 160 225 155"/>
+            <path d="M220 290 Q200 275 190 260"/>
+            <path d="M210 250 Q190 240 178 228"/>
+            <path d="M200 210 Q180 202 168 192"/>
+            <path d="M190 170 Q170 164 160 156"/>
           </g>
         </svg>
-        {/* Right-side line art stem */}
-        <svg style={{ position: "absolute", top: "25%", right: 40, width: 180, height: 280, opacity: 0.12 }} viewBox="0 0 180 280" fill="none">
-          <g stroke={B.dust} strokeWidth="1" fill="none">
-            <path d="M140 280 Q135 220 125 170 Q118 130 110 90 Q105 60 100 30"/>
-            <path d="M125 170 Q145 158 160 152"/>
-            <path d="M118 130 Q138 120 152 114"/>
-            <path d="M110 90 Q130 82 142 76"/>
-            <path d="M125 170 Q105 160 92 154"/>
-            <path d="M118 130 Q98 122 85 116"/>
-            <path d="M110 90 Q90 84 78 78"/>
+        {/* Left-side line art leaves */}
+        <svg style={{ position: "absolute", top: "30%", left: -10, width: 250, height: 350, opacity: 0.04 }} viewBox="0 0 250 350" fill="none">
+          <g stroke={B.gold} strokeWidth="1.2" fill="none">
+            <path d="M30 350 Q40 290 55 240 Q65 200 80 160 Q90 120 100 80"/>
+            <path d="M55 240 Q35 225 20 215"/>
+            <path d="M65 200 Q45 190 30 182"/>
+            <path d="M80 160 Q60 152 48 145"/>
+            <path d="M55 240 Q75 228 90 222"/>
+            <path d="M65 200 Q85 192 100 186"/>
+            <path d="M80 160 Q100 154 112 148"/>
           </g>
         </svg>
 
