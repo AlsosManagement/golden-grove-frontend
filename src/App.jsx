@@ -399,11 +399,61 @@ export default function GoldenGroveRecovery() {
         background: `linear-gradient(165deg, ${B.coffeeDark} 0%, ${B.coffee} 40%, ${B.butterscotch} 100%)`,
         color: B.white, position: "relative", overflow: "hidden",
       }}>
-        <div style={{
-          position: "absolute", inset: 0, opacity: 0.04,
-          backgroundImage: "radial-gradient(circle at 25% 25%, white 1px, transparent 1px)",
-          backgroundSize: "40px 40px",
-        }} />
+        {/* Botanical leaf illustrations — per brand guidelines p.18 */}
+        {/* Bottom-left cluster */}
+        <svg style={{ position: "absolute", bottom: -20, left: -40, width: 500, height: 500, opacity: 0.08 }} viewBox="0 0 500 500" fill="none">
+          <g fill={B.gold}>
+            <path d="M80 500 Q90 400 130 350 Q110 380 100 420 Q95 460 80 500Z"/>
+            <path d="M100 500 Q120 380 170 310 Q150 350 135 400 Q120 450 100 500Z"/>
+            <path d="M60 480 Q80 420 100 380 Q90 340 120 280 Q100 330 85 390 Q70 440 60 480Z"/>
+            <path d="M130 500 Q160 360 220 270 Q190 320 170 380 Q150 440 130 500Z"/>
+            <path d="M40 500 Q60 440 70 400 Q65 360 80 310 Q60 370 50 430 Q45 465 40 500Z"/>
+            <path d="M160 500 Q200 340 260 240 Q230 300 200 370 Q180 430 160 500Z"/>
+            <path d="M20 490 Q40 450 55 410 Q50 370 65 320 Q45 380 35 440Z"/>
+            {/* Fern fronds */}
+            <path d="M180 500 Q190 440 210 400 Q220 360 240 330 Q250 300 270 260 Q250 310 240 350 Q225 390 210 430 Q195 465 180 500Z"/>
+            <path d="M200 500 Q220 420 250 350 Q270 300 300 250 Q280 310 260 370 Q240 430 200 500Z"/>
+            <path d="M250 460 Q260 420 280 380 Q290 350 310 310 Q295 350 280 390 Q265 425 250 460Z"/>
+          </g>
+        </svg>
+        {/* Top-right cluster */}
+        <svg style={{ position: "absolute", top: -30, right: -50, width: 450, height: 450, opacity: 0.06, transform: "rotate(180deg)" }} viewBox="0 0 500 500" fill="none">
+          <g fill={B.gold}>
+            <path d="M80 500 Q90 400 130 350 Q110 380 100 420 Q95 460 80 500Z"/>
+            <path d="M100 500 Q120 380 170 310 Q150 350 135 400 Q120 450 100 500Z"/>
+            <path d="M60 480 Q80 420 100 380 Q90 340 120 280 Q100 330 85 390 Q70 440 60 480Z"/>
+            <path d="M130 500 Q160 360 220 270 Q190 320 170 380 Q150 440 130 500Z"/>
+            <path d="M160 500 Q200 340 260 240 Q230 300 200 370 Q180 430 160 500Z"/>
+            <path d="M180 500 Q190 440 210 400 Q220 360 240 330 Q250 300 270 260 Q250 310 240 350 Q225 390 210 430 Q195 465 180 500Z"/>
+            <path d="M200 500 Q220 420 250 350 Q270 300 300 250 Q280 310 260 370 Q240 430 200 500Z"/>
+          </g>
+        </svg>
+        {/* Right-side line art leaves */}
+        <svg style={{ position: "absolute", top: "20%", right: -20, width: 300, height: 400, opacity: 0.05 }} viewBox="0 0 300 400" fill="none">
+          <g stroke={B.gold} strokeWidth="1.5" fill="none">
+            <path d="M250 400 Q240 340 220 290 Q210 250 200 210 Q190 170 180 130"/>
+            <path d="M220 290 Q240 270 260 260"/>
+            <path d="M210 250 Q230 235 250 228"/>
+            <path d="M200 210 Q220 198 240 192"/>
+            <path d="M190 170 Q210 160 225 155"/>
+            <path d="M220 290 Q200 275 190 260"/>
+            <path d="M210 250 Q190 240 178 228"/>
+            <path d="M200 210 Q180 202 168 192"/>
+            <path d="M190 170 Q170 164 160 156"/>
+          </g>
+        </svg>
+        {/* Left-side line art leaves */}
+        <svg style={{ position: "absolute", top: "30%", left: -10, width: 250, height: 350, opacity: 0.04 }} viewBox="0 0 250 350" fill="none">
+          <g stroke={B.gold} strokeWidth="1.2" fill="none">
+            <path d="M30 350 Q40 290 55 240 Q65 200 80 160 Q90 120 100 80"/>
+            <path d="M55 240 Q35 225 20 215"/>
+            <path d="M65 200 Q45 190 30 182"/>
+            <path d="M80 160 Q60 152 48 145"/>
+            <path d="M55 240 Q75 228 90 222"/>
+            <path d="M65 200 Q85 192 100 186"/>
+            <path d="M80 160 Q100 154 112 148"/>
+          </g>
+        </svg>
 
         <FadeIn style={{ position: "relative", zIndex: 1, maxWidth: 800 }}>
           <div className="hero-wordmark" style={{ marginBottom: 32, display: "flex", justifyContent: "center" }}>
