@@ -181,7 +181,6 @@ export default function GoldenGroveRecovery() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [activeFaq, setActiveFaq] = useState(null);
-  const [showReviews, setShowReviews] = useState(false);
 
   useEffect(() => {
     const h = () => setScrolled(window.scrollY > 40);
@@ -260,13 +259,6 @@ export default function GoldenGroveRecovery() {
         }
         .faq-toggle:hover { color: ${B.butterscotch}; }
 
-        @keyframes reviewSlide {
-          from { opacity: 0; transform: translateY(12px) scale(0.95); }
-          to { opacity: 1; transform: translateY(0) scale(1); }
-        }
-
-        .reviews-widget button:focus { outline: none; }
-
         /* ── NAV RESPONSIVE ── */
         .site-nav { height: 64px; padding: 0 24px; }
         .nav-wordmark svg { height: 44px; transition: height 0.2s; }
@@ -323,8 +315,7 @@ export default function GoldenGroveRecovery() {
           .footer-bottom-inner span { font-size: 11px !important; }
 
           .mobile-menu { top: 56px !important; }
-          .reviews-widget { bottom: 16px !important; right: 16px !important; left: 16px !important; align-items: stretch !important; }
-          .reviews-widget > div:first-child { width: 100% !important; }
+          .reviews-grid { grid-template-columns: 1fr !important; }
         }
         @media (max-width: 480px) {
           .nav-wordmark svg { height: 22px !important; }
@@ -729,6 +720,73 @@ export default function GoldenGroveRecovery() {
         </div>
       </section>
 
+      {/* ═══ PATIENT REVIEWS ══════════════════════════════════════════════════ */}
+      <section className="section-pad" style={{ padding: "80px 24px", background: B.offWhite }}>
+        <div style={{ maxWidth: 1100, margin: "0 auto" }}>
+          <FadeIn>
+            <div style={{ textAlign: "center", marginBottom: 40 }}>
+              <div className="gg-section-label" style={{ justifyContent: "center", marginBottom: 8 }}>
+                <span>Patient Reviews</span>
+              </div>
+              <h2 style={{ fontSize: 28, fontWeight: 800, color: B.coffee, letterSpacing: "-0.02em", marginBottom: 10 }}>
+                What Our Patients Say
+              </h2>
+              <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 8, marginBottom: 6 }}>
+                <span style={{ fontSize: 22, color: B.gold, letterSpacing: 2 }}>&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                <span style={{ fontSize: 15, fontWeight: 700, color: B.coffee }}>5.0</span>
+                <span style={{ fontSize: 13, color: B.gray }}>on Google</span>
+              </div>
+            </div>
+          </FadeIn>
+
+          <div className="reviews-grid" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 18 }}>
+            {[
+              { name: "Anonymous", text: "This center is a very suitable place for addiction treatment and recovery. It has a safe and friendly environment. And this helps the addict to share his problems more easily with the authorities." },
+              { name: "Former Patient", text: "This place has changed my life! I came in here with a broken spirit and the staff went above and beyond to ensure I built my self confidence and respect back. It's not over crowded and we get to smoke every hour! We get a visit every week, and if your family can't make it in the visitation frame, your therapist will make sure to schedule a visit at a different time for you! We had groups and classes 3 times a day! Group activities and 3 meals a day! Hot real food, and very comfortable beds! I love it here I love the staff and I love my peers. I've built life long relationships with these people here. I honestly don't want to leave.. they accommodate for how long you need to be here." },
+              { name: "Former Patient", text: "This is the best rehab I've ever been too. I learned a lot about my addiction and what led me to use drugs in the first place. It's clean, great staff, also they give you medicine to ease your withdrawal and help with your mental health." },
+            ].map((r, i) => (
+              <FadeIn key={i} delay={i * 0.1}>
+                <div className="gg-card" style={{ padding: "28px 24px", height: "100%", display: "flex", flexDirection: "column" }}>
+                  <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 16 }}>
+                    <div style={{
+                      width: 40, height: 40, borderRadius: "50%",
+                      background: `linear-gradient(135deg, ${B.coffee}, ${B.butterscotch})`,
+                      display: "flex", alignItems: "center", justifyContent: "center",
+                      fontSize: 15, fontWeight: 700, color: B.white, flexShrink: 0,
+                    }}>{r.name[0]}</div>
+                    <div>
+                      <div style={{ fontSize: 14, fontWeight: 600, color: B.coffee }}>{r.name}</div>
+                      <div style={{ fontSize: 13, color: B.gold, letterSpacing: 1 }}>&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    </div>
+                  </div>
+                  <p style={{ fontSize: 13.5, color: B.gray, lineHeight: 1.75, flex: 1, margin: 0 }}>
+                    "{r.text}"
+                  </p>
+                  <div style={{ marginTop: 16, paddingTop: 14, borderTop: `1px solid ${B.dust}`, display: "flex", alignItems: "center", gap: 6 }}>
+                    <svg width="14" height="14" viewBox="0 0 24 24" style={{ flexShrink: 0 }}>
+                      <path fill={B.grayLight} d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z"/>
+                      <path fill={B.grayLight} d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+                      <path fill={B.grayLight} d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
+                      <path fill={B.grayLight} d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+                    </svg>
+                    <span style={{ fontSize: 11, color: B.grayLight, fontWeight: 500 }}>Google Review</span>
+                  </div>
+                </div>
+              </FadeIn>
+            ))}
+          </div>
+
+          <FadeIn delay={0.3}>
+            <div style={{ textAlign: "center", marginTop: 32 }}>
+              <a href="https://www.google.com/maps/place/Golden+Grove+Recovery/@38.1771149,-85.7913178,17z/" target="_blank" rel="noopener noreferrer"
+                 className="gg-btn gg-btn-outline" style={{ padding: "12px 28px", fontSize: 13 }}>
+                View All Reviews on Google
+              </a>
+            </div>
+          </FadeIn>
+        </div>
+      </section>
+
       {/* ═══ CTA BANNER ════════════════════════════════════════════════════════ */}
       <section className="cta-banner-section section-pad" style={{
         padding: "80px 24px", textAlign: "center", color: B.white,
@@ -840,90 +898,6 @@ export default function GoldenGroveRecovery() {
         </div>
       </footer>
 
-      {/* ═══ FLOATING GOOGLE REVIEWS WIDGET ════════════════════════════════════ */}
-      <div className="reviews-widget" style={{
-        position: "fixed", bottom: 24, right: 24, zIndex: 900,
-        display: "flex", flexDirection: "column", alignItems: "flex-end", gap: 8,
-      }}>
-        {/* Expanded panel */}
-        {showReviews && (
-          <div style={{
-            background: B.white, borderRadius: 14, border: `1px solid ${B.dust}`,
-            boxShadow: "0 12px 40px rgba(0,0,0,0.12)", width: 320, maxHeight: 420,
-            overflow: "hidden", animation: "reviewSlide 0.3s ease",
-          }}>
-            <div style={{
-              background: `linear-gradient(135deg, ${B.coffee}, ${B.butterscotch})`,
-              padding: "16px 20px", color: B.white, display: "flex", justifyContent: "space-between", alignItems: "center",
-            }}>
-              <div>
-                <div style={{ fontSize: 14, fontWeight: 700 }}>Patient Reviews</div>
-                <div style={{ display: "flex", alignItems: "center", gap: 6, marginTop: 4 }}>
-                  <span style={{ fontSize: 13, color: B.gold }}>&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-                  <span style={{ fontSize: 11, color: "rgba(255,255,255,0.6)" }}>5.0 on Google</span>
-                </div>
-              </div>
-              <button onClick={() => setShowReviews(false)} style={{
-                background: "none", border: "none", color: "rgba(255,255,255,0.6)",
-                fontSize: 18, cursor: "pointer", padding: 4,
-              }}>&times;</button>
-            </div>
-            <div style={{ padding: "16px 20px", maxHeight: 320, overflowY: "auto" }}>
-              {[
-                { name: "Sarah M.", text: "Golden Grove saved my life. The staff treated me with dignity from day one. I finally feel like myself again.", time: "2 weeks ago" },
-                { name: "James R.", text: "The residential program gave me the structure I needed. The therapists genuinely care about your recovery.", time: "1 month ago" },
-                { name: "Maria L.", text: "I was nervous about treatment, but the team made me feel safe and supported. Highly recommend.", time: "1 month ago" },
-              ].map((r, i) => (
-                <div key={i} style={{
-                  padding: "14px 0",
-                  borderBottom: i < 2 ? `1px solid ${B.offWhite}` : "none",
-                }}>
-                  <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 6 }}>
-                    <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
-                      <div style={{
-                        width: 28, height: 28, borderRadius: "50%",
-                        background: `linear-gradient(135deg, ${B.coffee}, ${B.butterscotch})`,
-                        display: "flex", alignItems: "center", justifyContent: "center",
-                        fontSize: 11, fontWeight: 700, color: B.white,
-                      }}>{r.name[0]}</div>
-                      <span style={{ fontSize: 13, fontWeight: 600, color: B.coffee }}>{r.name}</span>
-                    </div>
-                    <span style={{ fontSize: 10, color: B.grayLight }}>{r.time}</span>
-                  </div>
-                  <div style={{ fontSize: 11, color: B.gold, marginBottom: 4 }}>&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-                  <p style={{ fontSize: 12.5, color: B.gray, lineHeight: 1.6, margin: 0 }}>{r.text}</p>
-                </div>
-              ))}
-              <a href="https://www.google.com/maps/place/Golden+Grove+Recovery/@38.1771149,-85.7913178,17z/" target="_blank" rel="noopener noreferrer"
-                 style={{
-                   display: "block", textAlign: "center", padding: "12px 0", marginTop: 8,
-                   fontSize: 12, fontWeight: 600, color: B.butterscotch, textDecoration: "none",
-                 }}>
-                View all reviews on Google &#8594;
-              </a>
-            </div>
-          </div>
-        )}
-
-        {/* Floating trigger button */}
-        <button onClick={() => setShowReviews(!showReviews)} style={{
-          background: B.coffee, color: B.white, border: "none",
-          borderRadius: 50, padding: "12px 20px",
-          display: "flex", alignItems: "center", gap: 8,
-          cursor: "pointer", boxShadow: "0 4px 20px rgba(70,31,1,0.25)",
-          transition: "all 0.25s", fontFamily: "inherit", fontSize: 13, fontWeight: 600,
-        }}
-          onMouseEnter={(e) => { e.currentTarget.style.background = B.butterscotch; e.currentTarget.style.transform = "scale(1.05)"; }}
-          onMouseLeave={(e) => { e.currentTarget.style.background = B.coffee; e.currentTarget.style.transform = "scale(1)"; }}
-        >
-          <span style={{ fontSize: 16, color: B.gold }}>&#9733;</span>
-          <span>Reviews</span>
-          <span style={{
-            background: B.gold, color: B.coffee, fontSize: 11, fontWeight: 800,
-            padding: "2px 7px", borderRadius: 10,
-          }}>5.0</span>
-        </button>
-      </div>
     </div>
   );
 }
