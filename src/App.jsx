@@ -719,7 +719,7 @@ export default function GoldenGroveRecovery() {
               <div style={{ borderRadius: 14, overflow: "hidden", border: `1px solid ${B.dust}`,
                 boxShadow: "0 4px 20px rgba(0,0,0,0.06)", height: "100%", minHeight: 400 }}>
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3133.5!2d-85.8!3d38.2!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzjCsDEyJzAwLjAiTiA4NcKwNDgnMDAuMCJX!5e0!3m2!1sen!2sus!4v1"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3671.3983387843036!2d-85.7913178!3d38.1771149!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x886913f4bb47cce1%3A0x3b1eb48eee1eb461!2sGolden%20Grove%20Recovery!5e1!3m2!1sen!2sus!4v1775076603679!5m2!1sen!2sus"
                   className="map-frame" width="100%" height="100%" style={{ border: 0, display: "block", minHeight: 400 }} allowFullScreen="" loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade" title="Golden Grove Recovery Location"
                 />
@@ -894,7 +894,7 @@ export default function GoldenGroveRecovery() {
                   <p style={{ fontSize: 12.5, color: B.gray, lineHeight: 1.6, margin: 0 }}>{r.text}</p>
                 </div>
               ))}
-              <a href="https://www.google.com/maps/place/Golden+Grove+Recovery" target="_blank" rel="noopener noreferrer"
+              <a href="https://www.google.com/maps/place/Golden+Grove+Recovery/@38.1771149,-85.7913178,17z/" target="_blank" rel="noopener noreferrer"
                  style={{
                    display: "block", textAlign: "center", padding: "12px 0", marginTop: 8,
                    fontSize: 12, fontWeight: 600, color: B.butterscotch, textDecoration: "none",
