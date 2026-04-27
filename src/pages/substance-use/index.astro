@@ -1,0 +1,101 @@
+---
+import { getCollection, getEntry } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Breadcrumbs from "../../components/Breadcrumbs.astro";
+import Cta from "../../components/Cta.astro";
+import SiloStyles from "../../components/SiloStyles.astro";
+
+const facility = (await getEntry("facility", "golden-grove-recovery"))!.data;
+const substances = (await getCollection("substances")).sort((a, b) => a.data.name.localeCompare(b.data.name));
+
+const grouped = substances.reduce((acc, e) => {
+  (acc[e.data.category] ||= []).push(e);
+  return acc;
+}, {} as Record<string, typeof substances>);
+
+const categoryLabels: Record<string, string> = {
+  alcohol: "Alcohol",
+  opioids: "Opioids",
+  stimulants: "Stimulants",
+  benzodiazepines: "Benzodiazepines",
+  cannabis: "Cannabis",
+  polysubstance: "Polysubstance",
+  "kratom-synthetics": "Kratom & Synthetics",
+};
+
+const categoryHrefs: Record<string, string | null> = {
+  alcohol: "/substance-use/alcohol",
+  opioids: "/substance-use/opioids",
+  stimulants: null,
+  benzodiazepines: "/substance-use/benzodiazepines",
+};
+
+const title = "Substance Use Disorders We Treat | Golden Grove Recovery";
+const description = "Evidence-based treatment for alcohol, opioid (fentanyl, heroin), stimulant (meth, cocaine), and benzodiazepine use disorders in Louisville, KY.";
+
+const jsonLd = { "@context": "https://schema.org", "@type": "MedicalWebPage", name: title, description };
+
+const BASE = import.meta.env.BASE_URL.replace(/\/$/, "");
+const link = (p: string) => `${BASE}${p}`;
+---
+
+<BaseLayout title={title} description={description} jsonLd={jsonLd}>
+  <SiloStyles />
+  <Breadcrumbs trail={[
+    { label: "Home", href: "/" },
+    { label: "Substance Use Disorders" },
+  ]} />
+
+  <article class="silo-page">
+    <div class="silo-eyebrow">Substance Use Disorders</div>
+    <h1>Substance use disorders we treat</h1>
+    <p class="silo-lede">
+      Golden Grove Recovery treats the full range of substance use disorders affecting Kentuckians —
+      from alcohol use disorder and opioid use disorder (including fentanyl and heroin) to stimulant
+      use disorder, benzodiazepine dependence, and polysubstance use. Every program is grounded in
+      ASAM clinical criteria and integrates medication-assisted treatment when indicated.
+    </p>
+
+    {Object.entries(grouped).map(([cat, items]) => (
+      <>
+        <h2>
+          {categoryHrefs[cat] ? (
+            <a href={link(categoryHrefs[cat]!)}>{categoryLabels[cat] ?? cat}</a>
+          ) : (
+            categoryLabels[cat] ?? cat
+          )}
+        </h2>
+        <ul>
+          {items.map((s) => (
+            <li>
+              <a href={link(`/substance-use/${s.data.category}/${s.data.slug}`)}>{s.data.name}</a>
+              {s.data.synonyms.length > 0 && <span style="color: #6B6B6B; font-size: 13px;"> — also known as: {s.data.synonyms.slice(0, 3).join(", ")}</span>}
+            </li>
+          ))}
+        </ul>
+      </>
+    ))}
+
+    <h2>Levels of care</h2>
+    <p>
+      Treatment is matched to clinical need using ASAM criteria. The continuum includes:
+    </p>
+    <ul>
+      <li><a href={link("/medicaid/medicaid-detox-coverage")}>Medical detox</a> — supervised withdrawal management</li>
+      <li><a href={link("/medicaid/medicaid-residential-coverage")}>Residential treatment</a> — 24/7 structured care</li>
+      <li><a href={link("/medicaid/medicaid-php-iop-coverage")}>PHP &amp; IOP</a> — intensive day or evening programming</li>
+      <li><a href={link("/medicaid/medicaid-outpatient-coverage")}>Outpatient</a> — long-term continuing care</li>
+      <li><a href={link("/medicaid/medicaid-mat-coverage")}>Medication-Assisted Treatment</a> — Suboxone, methadone, Vivitrol, naltrexone</li>
+    </ul>
+
+    <h2>Co-occurring mental health conditions</h2>
+    <p>
+      Substance use disorder co-occurs at high rates with depression, anxiety, PTSD, bipolar
+      disorder, and other mental health conditions. Integrated dual-diagnosis treatment addresses
+      both conditions simultaneously and produces better outcomes than treating one and deferring the
+      other.
+    </p>
+
+    <Cta heading="Verify your insurance and start treatment" />
+  </article>
+</BaseLayout>

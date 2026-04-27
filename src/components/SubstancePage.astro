@@ -1,0 +1,135 @@
+---
+import { getCollection, getEntry } from "astro:content";
+import Cta from "./Cta.astro";
+import InsuranceDisclaimer from "./InsuranceDisclaimer.astro";
+
+export interface Props {
+  substanceSlug: string;
+  cityOverride?: string;
+}
+
+const { substanceSlug, cityOverride } = Astro.props as Props;
+const entry = await getEntry("substances", substanceSlug);
+if (!entry) throw new Error(`Substance entry not found: ${substanceSlug}`);
+const s = entry.data;
+const facility = (await getEntry("facility", "golden-grove-recovery"))!.data;
+const city = cityOverride ?? facility.city;
+
+const allSubstances = (await getCollection("substances"))
+  .filter((e) => e.data.slug !== s.slug && e.data.category === s.category)
+  .sort((a, b) => a.data.name.localeCompare(b.data.name));
+
+const BASE = import.meta.env.BASE_URL.replace(/\/$/, "");
+const link = (p: string) => `${BASE}${p}`;
+---
+
+<article class="silo-page">
+  <div class="silo-eyebrow">Substance Use Disorder</div>
+  <h1>{s.name} treatment in {city}, {facility.stateCode}</h1>
+  <p class="silo-lede">{s.overview}</p>
+
+  <InsuranceDisclaimer variant="medicaid" />
+
+  {s.signs.length > 0 && (
+    <>
+      <h2>Signs of {s.name.toLowerCase()}</h2>
+      <ul>
+        {s.signs.map((sign) => <li>{sign}</li>)}
+      </ul>
+    </>
+  )}
+
+  {s.withdrawalTimeline.length > 0 && (
+    <>
+      <h2>Withdrawal timeline</h2>
+      <div class="silo-table-wrap">
+        <table class="silo-table">
+          <thead>
+            <tr><th>Window</th><th>Common Symptoms</th></tr>
+          </thead>
+          <tbody>
+            {s.withdrawalTimeline.map((row) => (
+              <tr>
+                <td><strong>{row.window}</strong></td>
+                <td>{row.symptoms.join(", ")}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </>
+  )}
+
+  {s.treatmentApproach.length > 0 && (
+    <>
+      <h2>How we treat {s.name.toLowerCase()}</h2>
+      {s.treatmentApproach.map((step) => (
+        <div class="silo-card">
+          <h3>{step.title}</h3>
+          <p>{step.detail}</p>
+          {step.linksTo && step.linksTo.length > 0 && (
+            <p style="margin-top: 8px;">
+              {step.linksTo.map((href, i) => (
+                <>
+                  {i > 0 && " · "}
+                  <a href={link(href)}>Read more</a>
+                </>
+              ))}
+            </p>
+          )}
+        </div>
+      ))}
+    </>
+  )}
+
+  {s.localContext && (
+    <>
+      <h2>{city}, {facility.stateCode} context</h2>
+      <p>{s.localContext}</p>
+    </>
+  )}
+
+  {s.medicaidCoverageSummary && (
+    <>
+      <h2>Does Kentucky Medicaid cover {s.name.toLowerCase()} treatment?</h2>
+      <p>{s.medicaidCoverageSummary}</p>
+      <p>
+        Read more about <a href={link("/medicaid")}>Kentucky Medicaid coverage for SUD treatment</a>,
+        or pick your <a href={link("/medicaid")}>Medicaid MCO</a> for plan-specific details.
+      </p>
+    </>
+  )}
+
+  <Cta heading={`Verify your ${s.name.toLowerCase()} treatment coverage`} />
+
+  {s.faqs.length > 0 && (
+    <>
+      <h2>Frequently asked questions</h2>
+      <div class="silo-faq">
+        {s.faqs.map((f) => (
+          <details>
+            <summary>{f.q}</summary>
+            <p>{f.a}</p>
+          </details>
+        ))}
+      </div>
+    </>
+  )}
+
+  {allSubstances.length > 0 && (
+    <>
+      <h2>Other related substances</h2>
+      <ul>
+        {allSubstances.map((other) => (
+          <li>
+            <a href={link(`/substance-use/${other.data.category}/${other.data.slug}`)}>{other.data.name}</a>
+          </li>
+        ))}
+      </ul>
+    </>
+  )}
+
+  <p style="margin-top: 24px;">
+    Return to the <a href={link("/substance-use")}>substance use disorders we treat</a>.
+  </p>
+</article>

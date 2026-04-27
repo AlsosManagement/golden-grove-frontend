@@ -1,0 +1,160 @@
+---
+import { getEntry } from "astro:content";
+import BaseLayout from "../../../../layouts/BaseLayout.astro";
+import Breadcrumbs from "../../../../components/Breadcrumbs.astro";
+import Cta from "../../../../components/Cta.astro";
+import SiloStyles from "../../../../components/SiloStyles.astro";
+import InsuranceDisclaimer from "../../../../components/InsuranceDisclaimer.astro";
+
+const facility = (await getEntry("facility", "golden-grove-recovery"))!.data;
+
+const title = `Suboxone Treatment in ${facility.city}, ${facility.stateCode} | Golden Grove Recovery`;
+const description = `Suboxone (buprenorphine/naloxone) treatment for opioid use disorder in Louisville, KY. Induction, maintenance, taper, and Kentucky Medicaid coverage details.`;
+
+const faqs = [
+  { q: "What is Suboxone?", a: "Suboxone is a brand-name medication combining buprenorphine (a partial opioid agonist) with naloxone (an opioid antagonist included to deter intravenous misuse). It is FDA-approved for the treatment of opioid use disorder." },
+  { q: "How is Suboxone different from methadone?", a: "Suboxone (buprenorphine) is a partial opioid agonist with a ceiling effect on respiratory depression — making overdose risk much lower than methadone. Suboxone can be prescribed in office-based settings, while methadone for OUD must be dispensed at federally licensed Opioid Treatment Programs (OTPs)." },
+  { q: "Will Suboxone make me feel high?", a: "No. At therapeutic doses, Suboxone relieves cravings and prevents withdrawal without producing euphoria. The partial agonist mechanism produces a 'ceiling effect' — taking more does not create stronger effects." },
+  { q: "How long should I stay on Suboxone?", a: "Suboxone is a long-term treatment for many patients. There is no clinical evidence that shorter MAT duration improves outcomes; research consistently shows that longer MAT correlates with lower overdose mortality. Tapering off Suboxone, when clinically appropriate, should be gradual and planned with your prescriber." },
+  { q: "Does Kentucky Medicaid cover Suboxone?", a: "Yes. All six Kentucky Medicaid MCOs cover Suboxone for opioid use disorder. Specific Suboxone formulations (film vs. tablet, generic vs. brand) may have different prior authorization requirements depending on the MCO's preferred drug list." },
+];
+
+const jsonLd = [
+  { "@context": "https://schema.org", "@type": "MedicalWebPage", name: title, description },
+  {
+    "@context": "https://schema.org",
+    "@type": "Drug",
+    name: "Suboxone",
+    activeIngredient: "buprenorphine + naloxone",
+    drugClass: { "@type": "DrugClass", name: "Partial Opioid Agonist" },
+    indication: { "@type": "MedicalIndication", name: "Opioid Use Disorder" },
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })),
+  },
+];
+
+const BASE = import.meta.env.BASE_URL.replace(/\/$/, "");
+const link = (p: string) => `${BASE}${p}`;
+---
+
+<BaseLayout title={title} description={description} jsonLd={jsonLd}>
+  <SiloStyles />
+  <Breadcrumbs trail={[
+    { label: "Home", href: "/" },
+    { label: "Substance Use", href: "/substance-use" },
+    { label: "Opioids", href: "/substance-use/opioids" },
+    { label: "MAT", href: "/substance-use/opioids/mat" },
+    { label: "Suboxone" },
+  ]} />
+
+  <article class="silo-page">
+    <div class="silo-eyebrow">MAT · Suboxone</div>
+    <h1>Suboxone treatment in {facility.city}, {facility.stateCode}</h1>
+    <p class="silo-lede">
+      Suboxone (buprenorphine + naloxone) is one of the most widely used and best-evidenced
+      medications for opioid use disorder. As a partial opioid agonist, Suboxone relieves cravings
+      and prevents withdrawal without producing the dangerous respiratory depression of full
+      agonists like fentanyl, heroin, or methadone — making it both highly effective and notably
+      safer than the alternatives.
+    </p>
+
+    <InsuranceDisclaimer variant="medicaid" />
+
+    <h2>How Suboxone works</h2>
+    <p>
+      Buprenorphine binds tightly to the brain's mu-opioid receptors but only partially activates
+      them. This produces three clinically critical effects:
+    </p>
+    <ul>
+      <li><strong>Cravings drop</strong> — receptors are occupied, so the constant pull of cravings recedes</li>
+      <li><strong>Withdrawal is prevented</strong> — physical withdrawal symptoms don't emerge while Suboxone is in your system</li>
+      <li><strong>Other opioids stop "working"</strong> — buprenorphine's tight binding largely blocks the effects of fentanyl, heroin, or oxycodone if a relapse happens</li>
+    </ul>
+    <p>
+      The naloxone in Suboxone is poorly absorbed when taken sublingually as prescribed, but is
+      activated if someone tries to inject the medication — a built-in deterrent against IV misuse.
+    </p>
+
+    <h2>The three phases of Suboxone treatment</h2>
+
+    <h3>1. Induction</h3>
+    <p>
+      Suboxone is started after the patient is in moderate withdrawal from their last opioid use
+      (typically 12–24 hours for short-acting opioids, longer for fentanyl). Starting too early can
+      produce precipitated withdrawal — a sharp, sudden worsening of withdrawal symptoms.
+      Induction is typically supervised in a clinical setting and dose-titrated based on response.
+    </p>
+
+    <h3>2. Maintenance</h3>
+    <p>
+      Once a stable dose is found (typically 8–24 mg daily), patients enter the maintenance phase.
+      Most patients remain on a steady maintenance dose for months to years, paired with ongoing
+      therapy and regular clinical check-ins. Maintenance is when MAT delivers the largest mortality
+      and quality-of-life benefits.
+    </p>
+
+    <h3>3. Taper</h3>
+    <p>
+      Tapering off Suboxone, when clinically appropriate, is a gradual process — typically over
+      months — and should always be planned and monitored by a prescriber. Many patients choose to
+      remain on Suboxone indefinitely; the clinical evidence supports long-term maintenance over
+      shorter courses for most people.
+    </p>
+
+    <h2>Side effects and safety</h2>
+    <p>
+      Common side effects include constipation, headache, nausea (early), and mild sedation. Serious
+      side effects are uncommon at therapeutic doses. Suboxone has a much lower overdose risk
+      profile than methadone or other full opioid agonists due to the partial-agonist ceiling
+      effect.
+    </p>
+
+    <h2>Cost and Kentucky Medicaid coverage</h2>
+    <p>
+      All six Kentucky Medicaid MCOs cover Suboxone for opioid use disorder. Pharmacy prior
+      authorization may apply for specific formulations (e.g., name-brand film vs. generic tablets,
+      or specialty long-acting buprenorphine products like Brixadi or Sublocade). Our admissions
+      team handles authorization on your behalf. See
+      <a href={link("/medicaid/medicaid-mat-coverage")}>Kentucky Medicaid MAT coverage</a> for
+      plan-specific details.
+    </p>
+
+    <h2>Suboxone vs. methadone vs. Vivitrol</h2>
+    <div class="silo-table-wrap">
+      <table class="silo-table">
+        <thead>
+          <tr><th></th><th>Suboxone</th><th>Methadone</th><th>Vivitrol</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Mechanism</td><td>Partial agonist</td><td>Full agonist</td><td>Antagonist</td></tr>
+          <tr><td>Setting</td><td>Office-based</td><td>OTP only</td><td>Office-based</td></tr>
+          <tr><td>Frequency</td><td>Daily oral / sublingual</td><td>Daily on-site dosing initially</td><td>Monthly injection</td></tr>
+          <tr><td>Pre-treatment opioid-free</td><td>~12–24 hrs</td><td>None required</td><td>7–14 days</td></tr>
+          <tr><td>Overdose risk profile</td><td>Low (ceiling effect)</td><td>Moderate</td><td>None (no opioid effect)</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <Cta heading="Verify your Suboxone coverage and start treatment" />
+
+    <h2>Frequently asked questions</h2>
+    <div class="silo-faq">
+      {faqs.map((f) => (
+        <details>
+          <summary>{f.q}</summary>
+          <p>{f.a}</p>
+        </details>
+      ))}
+    </div>
+
+    <h2>Related</h2>
+    <ul>
+      <li><a href={link("/substance-use/opioids/mat")}>MAT for opioid use disorder — overview</a></li>
+      <li><a href={link("/substance-use/opioids")}>Opioid Use Disorder overview</a></li>
+      <li><a href={link("/medicaid/medicaid-mat-coverage")}>Kentucky Medicaid MAT coverage</a></li>
+    </ul>
+  </article>
+</BaseLayout>

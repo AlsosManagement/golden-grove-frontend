@@ -1,0 +1,146 @@
+---
+import { getEntry } from "astro:content";
+import BaseLayout from "../../../../layouts/BaseLayout.astro";
+import Breadcrumbs from "../../../../components/Breadcrumbs.astro";
+import Cta from "../../../../components/Cta.astro";
+import SiloStyles from "../../../../components/SiloStyles.astro";
+import InsuranceDisclaimer from "../../../../components/InsuranceDisclaimer.astro";
+
+const facility = (await getEntry("facility", "golden-grove-recovery"))!.data;
+
+const title = `Medication-Assisted Treatment (MAT) for Opioid Use Disorder in ${facility.city}, ${facility.stateCode} | Golden Grove Recovery`;
+const description = `MAT — Suboxone, Subutex, methadone, Vivitrol, and naltrexone — is the clinical standard of care for opioid use disorder. Coverage and access in Louisville, KY.`;
+
+const faqs = [
+  { q: "What does MAT stand for?", a: "MAT stands for Medication-Assisted Treatment. It refers to the use of FDA-approved medications combined with behavioral therapy to treat opioid use disorder and alcohol use disorder. Decades of research show MAT is the most effective approach available." },
+  { q: "Is MAT just trading one addiction for another?", a: "No. MAT medications stabilize brain chemistry without producing the euphoria of misuse when taken as prescribed. MAT for opioid use disorder reduces overdose mortality by more than 50% when continued long-term — a result no other treatment approach achieves." },
+  { q: "Which MAT medication is right for me?", a: "It depends on clinical factors including overdose risk, prior treatment history, pregnancy status, ability to attend daily dosing (for methadone), and personal preference. A clinician will help you choose; many patients try more than one MAT option over time." },
+  { q: "How long should I stay on MAT?", a: "MAT is meant to be a long-term treatment for many patients. There is no clinical evidence that shorter MAT duration improves long-term outcomes — research consistently shows the opposite. Discontinuation should be gradual, planned, and clinically guided." },
+];
+
+const jsonLd = [
+  { "@context": "https://schema.org", "@type": "MedicalWebPage", name: title, description },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })),
+  },
+];
+
+const BASE = import.meta.env.BASE_URL.replace(/\/$/, "");
+const link = (p: string) => `${BASE}${p}`;
+---
+
+<BaseLayout title={title} description={description} jsonLd={jsonLd}>
+  <SiloStyles />
+  <Breadcrumbs trail={[
+    { label: "Home", href: "/" },
+    { label: "Substance Use", href: "/substance-use" },
+    { label: "Opioids", href: "/substance-use/opioids" },
+    { label: "MAT" },
+  ]} />
+
+  <article class="silo-page">
+    <div class="silo-eyebrow">Substance Use Disorder · Opioid MAT</div>
+    <h1>Medication-Assisted Treatment (MAT) for opioid use disorder</h1>
+    <p class="silo-lede">
+      Medication-Assisted Treatment is the clinical standard of care for opioid use disorder. MAT
+      pairs FDA-approved medications — Suboxone, Subutex, methadone, Vivitrol, and oral naltrexone
+      — with behavioral therapy to reduce cravings, prevent withdrawal, and dramatically reduce
+      overdose risk. MAT continued long-term is associated with the largest mortality reductions of
+      any OUD treatment approach.
+    </p>
+
+    <InsuranceDisclaimer variant="medicaid" />
+
+    <h2>MAT medications at a glance</h2>
+    <div class="silo-table-wrap">
+      <table class="silo-table">
+        <thead>
+          <tr><th>Medication</th><th>How it works</th><th>Setting</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><a href={link("/substance-use/opioids/mat/suboxone")}><strong>Suboxone</strong></a> (buprenorphine + naloxone)</td>
+            <td>Partial opioid agonist that relieves cravings and withdrawal without producing euphoria at therapeutic doses</td>
+            <td>Office-based or specialty clinic; daily dosing</td>
+          </tr>
+          <tr>
+            <td><strong>Subutex</strong> (buprenorphine alone)</td>
+            <td>Same mechanism as Suboxone, without the abuse-deterrent naloxone — preferred during pregnancy</td>
+            <td>Office-based; daily dosing</td>
+          </tr>
+          <tr>
+            <td><strong>Methadone</strong></td>
+            <td>Full opioid agonist that prevents withdrawal and reduces cravings; long half-life</td>
+            <td>Federally licensed Opioid Treatment Programs (OTPs) only; daily on-site dosing initially</td>
+          </tr>
+          <tr>
+            <td><strong>Vivitrol</strong> (extended-release naltrexone)</td>
+            <td>Opioid antagonist that blocks the effects of opioids; monthly injection</td>
+            <td>Office-based; requires 7–14 days opioid-free before first dose</td>
+          </tr>
+          <tr>
+            <td><strong>Oral naltrexone</strong></td>
+            <td>Same mechanism as Vivitrol, daily oral pill</td>
+            <td>Pharmacy; lower adherence than injectable</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2>Why MAT works</h2>
+    <p>
+      Opioid use disorder produces lasting changes in brain reward circuitry — withdrawal, cravings,
+      and dysregulated stress response can persist for months or years after the last use. MAT
+      medications stabilize the affected brain systems so patients can engage in therapy, hold jobs,
+      maintain relationships, and rebuild lives without the constant pull of cravings or the
+      physical danger of withdrawal-driven relapse.
+    </p>
+    <p>
+      Importantly, the largest harm caused by OUD is fatal overdose. MAT cuts overdose mortality by
+      more than half, and longer MAT duration correlates with lower mortality risk. This is the
+      single most important reason MAT is the standard of care.
+    </p>
+
+    <h2>What MAT looks like in practice</h2>
+    <p>
+      MAT typically starts during <a href={link("/medicaid/medicaid-detox-coverage")}>medical detox</a>
+      with buprenorphine induction (Suboxone or Subutex). It continues through
+      <a href={link("/medicaid/medicaid-residential-coverage")}>residential treatment</a>,
+      <a href={link("/medicaid/medicaid-php-iop-coverage")}>PHP / IOP step-down</a>, and
+      indefinitely at the <a href={link("/medicaid/medicaid-outpatient-coverage")}>outpatient</a>
+      level. Pharmacy refills, periodic clinical check-ins, and ongoing therapy all continue
+      together.
+    </p>
+
+    <h2>Insurance coverage for MAT</h2>
+    <p>
+      All six Kentucky Medicaid MCOs cover MAT for OUD. Most commercial insurance plans (Anthem
+      BCBS, Aetna, Centene/Ambetter, UnitedHealthcare, Optum, Humana, Cigna) also cover MAT —
+      coverage is required by federal mental health parity law. See
+      <a href={link("/medicaid/medicaid-mat-coverage")}>Kentucky Medicaid MAT coverage</a> for
+      plan-specific details.
+    </p>
+
+    <Cta heading="Verify your MAT coverage and start treatment" />
+
+    <h2>Frequently asked questions</h2>
+    <div class="silo-faq">
+      {faqs.map((f) => (
+        <details>
+          <summary>{f.q}</summary>
+          <p>{f.a}</p>
+        </details>
+      ))}
+    </div>
+
+    <h2>Related</h2>
+    <ul>
+      <li><a href={link("/substance-use/opioids")}>Opioid Use Disorder overview</a></li>
+      <li><a href={link("/substance-use/opioids/fentanyl")}>Fentanyl addiction treatment</a></li>
+      <li><a href={link("/substance-use/opioids/heroin")}>Heroin addiction treatment</a></li>
+      <li><a href={link("/substance-use/opioids/mat/suboxone")}>Suboxone treatment</a></li>
+    </ul>
+  </article>
+</BaseLayout>
