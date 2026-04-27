@@ -1,0 +1,25 @@
+---
+import { getEntry } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Breadcrumbs from "../../components/Breadcrumbs.astro";
+import SiloStyles from "../../components/SiloStyles.astro";
+import LevelOfCarePage from "../../components/LevelOfCarePage.astro";
+
+const l = (await getEntry("levelsOfCare", "residential-inpatient"))!.data;
+const facility = (await getEntry("facility", "golden-grove-recovery"))!.data;
+
+const title = `Residential Inpatient Addiction Treatment in ${facility.city}, ${facility.stateCode} | Golden Grove Recovery`;
+const description = "24/7 residential SUD treatment (ASAM 3.1, 3.3, 3.5) with structured therapy, MAT, and integrated mental health care. Kentucky Medicaid covered.";
+
+const jsonLd = { "@context": "https://schema.org", "@type": "MedicalWebPage", name: title, description };
+---
+
+<BaseLayout title={title} description={description} jsonLd={jsonLd}>
+  <SiloStyles />
+  <Breadcrumbs trail={[
+    { label: "Home", href: "/" },
+    { label: "Levels of Care", href: "/levels-of-care" },
+    { label: l.shortName },
+  ]} />
+  <LevelOfCarePage slug="residential-inpatient" />
+</BaseLayout>

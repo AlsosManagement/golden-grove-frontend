@@ -1,0 +1,83 @@
+---
+import { getCollection, getEntry } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Breadcrumbs from "../../components/Breadcrumbs.astro";
+import Cta from "../../components/Cta.astro";
+import SiloStyles from "../../components/SiloStyles.astro";
+
+const facility = (await getEntry("facility", "golden-grove-recovery"))!.data;
+const levels = (await getCollection("levelsOfCare"))
+  .sort((a, b) => Number(b.data.asamCode) - Number(a.data.asamCode));
+
+const title = `Levels of Care for Addiction Treatment in ${facility.city}, ${facility.stateCode} | Golden Grove Recovery`;
+const description = "ASAM-aligned levels of care: medical detox, residential, PHP, IOP, and outpatient. Treatment matched to clinical need at Golden Grove Recovery in Louisville, KY.";
+
+const jsonLd = { "@context": "https://schema.org", "@type": "MedicalWebPage", name: title, description };
+
+const BASE = import.meta.env.BASE_URL.replace(/\/$/, "");
+const link = (p: string) => `${BASE}${p}`;
+---
+
+<BaseLayout title={title} description={description} jsonLd={jsonLd}>
+  <SiloStyles />
+  <Breadcrumbs trail={[
+    { label: "Home", href: "/" },
+    { label: "Levels of Care" },
+  ]} />
+
+  <article class="silo-page">
+    <div class="silo-eyebrow">ASAM Continuum of Care</div>
+    <h1>Levels of care for addiction treatment</h1>
+    <p class="silo-lede">
+      Golden Grove Recovery uses the American Society of Addiction Medicine (ASAM) continuum of care
+      to match each patient to the right level of treatment intensity. Patients commonly move
+      through several levels over the course of recovery — starting at higher intensity during
+      stabilization and stepping down as they build the skills and support to maintain recovery in
+      less structured settings.
+    </p>
+
+    <h2>The five levels we offer</h2>
+    <div class="silo-table-wrap">
+      <table class="silo-table">
+        <thead>
+          <tr><th>Level</th><th>ASAM</th><th>Duration</th><th>Hours / week</th></tr>
+        </thead>
+        <tbody>
+          {levels.map((l) => (
+            <tr>
+              <td>
+                <a href={link(`/levels-of-care/${l.data.slug}`)}><strong>{l.data.shortName}</strong></a>
+              </td>
+              <td>{l.data.asamCode}</td>
+              <td>{l.data.typicalDuration}</td>
+              <td>{l.data.hoursPerWeek ?? "—"}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+
+    {levels.map((l) => (
+      <div class="silo-card">
+        <h3>
+          <a href={link(`/levels-of-care/${l.data.slug}`)}>{l.data.name}</a>
+        </h3>
+        <p>{l.data.description}</p>
+      </div>
+    ))}
+
+    <h2>Insurance coverage for levels of care</h2>
+    <p>
+      All Kentucky Medicaid MCOs cover the full ASAM continuum when medically necessary. See
+      coverage details by level:
+    </p>
+    <ul>
+      <li><a href={link("/medicaid/medicaid-detox-coverage")}>Detox coverage</a></li>
+      <li><a href={link("/medicaid/medicaid-residential-coverage")}>Residential coverage</a></li>
+      <li><a href={link("/medicaid/medicaid-php-iop-coverage")}>PHP / IOP coverage</a></li>
+      <li><a href={link("/medicaid/medicaid-outpatient-coverage")}>Outpatient coverage</a></li>
+    </ul>
+
+    <Cta heading="Find the right level of care for you" />
+  </article>
+</BaseLayout>

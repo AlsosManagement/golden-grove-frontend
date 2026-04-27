@@ -1,0 +1,25 @@
+---
+import { getEntry } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Breadcrumbs from "../../components/Breadcrumbs.astro";
+import SiloStyles from "../../components/SiloStyles.astro";
+import LevelOfCarePage from "../../components/LevelOfCarePage.astro";
+
+const l = (await getEntry("levelsOfCare", "intensive-outpatient-iop"))!.data;
+const facility = (await getEntry("facility", "golden-grove-recovery"))!.data;
+
+const title = `Intensive Outpatient Program (IOP) in ${facility.city}, ${facility.stateCode} | Golden Grove Recovery`;
+const description = "Flexible IOP (ASAM 2.1) for substance use disorder — 9-19 hours/week of structured care while maintaining work, school, or family. Kentucky Medicaid covered.";
+
+const jsonLd = { "@context": "https://schema.org", "@type": "MedicalWebPage", name: title, description };
+---
+
+<BaseLayout title={title} description={description} jsonLd={jsonLd}>
+  <SiloStyles />
+  <Breadcrumbs trail={[
+    { label: "Home", href: "/" },
+    { label: "Levels of Care", href: "/levels-of-care" },
+    { label: l.shortName },
+  ]} />
+  <LevelOfCarePage slug="intensive-outpatient-iop" />
+</BaseLayout>

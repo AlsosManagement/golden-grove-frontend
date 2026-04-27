@@ -1,0 +1,25 @@
+---
+import { getEntry } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Breadcrumbs from "../../components/Breadcrumbs.astro";
+import SiloStyles from "../../components/SiloStyles.astro";
+import LevelOfCarePage from "../../components/LevelOfCarePage.astro";
+
+const l = (await getEntry("levelsOfCare", "medical-detox"))!.data;
+const facility = (await getEntry("facility", "golden-grove-recovery"))!.data;
+
+const title = `Medical Detox in ${facility.city}, ${facility.stateCode} | Golden Grove Recovery`;
+const description = "24/7 medically supervised detox (ASAM 3.7 / 4) for alcohol, opioid, benzodiazepine, and other substance withdrawal. Kentucky Medicaid covered.";
+
+const jsonLd = { "@context": "https://schema.org", "@type": "MedicalWebPage", name: title, description };
+---
+
+<BaseLayout title={title} description={description} jsonLd={jsonLd}>
+  <SiloStyles />
+  <Breadcrumbs trail={[
+    { label: "Home", href: "/" },
+    { label: "Levels of Care", href: "/levels-of-care" },
+    { label: l.shortName },
+  ]} />
+  <LevelOfCarePage slug="medical-detox" />
+</BaseLayout>
