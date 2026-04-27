@@ -1,0 +1,24 @@
+{
+  "name": "Passport Health Plan by Molina Healthcare",
+  "shortName": "Passport",
+  "slug": "passport-health-plan",
+  "stateCode": "KY",
+  "programType": "medicaid",
+  "parentPlan": "Molina Healthcare of Kentucky",
+  "url": "https://www.molinahealthcare.com/members/ky/en-us.html",
+  "description": "Passport Health Plan by Molina Healthcare is one of Kentucky Medicaid's original managed care organizations, serving Medicaid members across all 120 Kentucky counties. Passport covers substance use disorder (SUD) treatment as a core benefit, including medical detox, residential, PHP, IOP, outpatient, and medication-assisted treatment.",
+  "coverageHighlights": [
+    "Medical detox (ASAM 3.7 and 4) with prior authorization",
+    "Residential addiction treatment (ASAM 3.1, 3.3, 3.5) subject to medical necessity",
+    "Partial Hospitalization (PHP, ASAM 2.5) and Intensive Outpatient (IOP, ASAM 2.1)",
+    "Outpatient SUD counseling with no visit cap when medically necessary",
+    "Medication-Assisted Treatment — Suboxone, Subutex, methadone, Vivitrol, and oral naltrexone",
+    "Integrated behavioral health benefits for co-occurring mental health conditions",
+    "Non-emergency medical transportation (NEMT) to SUD appointments"
+  ],
+  "priorAuthNotes": "Passport typically requires prior authorization for residential SUD treatment and for some MAT prescriptions. Outpatient SUD and PHP/IOP admissions are generally handled through notification and concurrent review rather than a multi-day pre-auth.",
+  "levelsOfCareCovered": ["1", "2.1", "2.5", "3.1", "3.3", "3.5", "3.7", "4"],
+  "matCovered": ["suboxone", "subutex", "methadone", "vivitrol", "naltrexone"],
+  "memberBenefitsNote": "Members receive a pharmacy benefit through Molina's formulary, member services at 1-800-578-0603, and access to Molina's care management team for complex SUD and dual-diagnosis cases.",
+  "contractStatus": "pending"
+}

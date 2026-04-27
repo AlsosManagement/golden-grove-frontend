@@ -1,0 +1,19 @@
+{
+  "name": "Medical Detox (Withdrawal Management)",
+  "slug": "medical-detox",
+  "asamCode": "3.7",
+  "shortName": "Detox",
+  "typicalDuration": "3–7 days",
+  "hoursPerWeek": "24/7 medical oversight",
+  "description": "Medical detox — clinically called withdrawal management — is the supervised medical process of safely clearing a substance from the body while managing symptoms that can range from uncomfortable to life-threatening. Alcohol and benzodiazepine withdrawal can be fatal without medical supervision; opioid withdrawal is severe and greatly increases relapse-and-overdose risk if unmanaged. Detox is the first step in treatment, not the full treatment.",
+  "whoBenefits": [
+    "Anyone physically dependent on alcohol, benzodiazepines, opioids, or other substances who needs medically supervised withdrawal",
+    "Patients with a history of seizures or DTs during prior withdrawal",
+    "Patients on high-dose or long-term benzodiazepines requiring supervised taper",
+    "Patients with opioid use disorder who need rapid MAT induction",
+    "Patients with medical comorbidities (cardiac, hepatic, pregnancy) that make outpatient withdrawal unsafe"
+  ],
+  "typicalDay": "Detox is 24/7 medical supervision with structured vitals checks, symptom-based medication adjustment, hydration and nutrition support, and early engagement with counseling. MAT induction — especially for opioid use disorder — often begins during detox.",
+  "medicaidCoverageSummary": "All six Kentucky Medicaid MCOs cover medical detox at ASAM 3.7 and 4 based on medical-necessity determination. Authorization is typically obtained urgently at admission.",
+  "imdExclusionNote": "Freestanding SUD residential facilities larger than 16 beds can trigger the Medicaid IMD (Institution for Mental Disease) exclusion in some contexts. Kentucky's 1115 waiver allows full Medicaid coverage of residential SUD treatment in licensed facilities, including detox."
+}

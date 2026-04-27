@@ -1,0 +1,25 @@
+{
+  "name": "Humana Healthy Horizons in Kentucky",
+  "shortName": "Humana Healthy Horizons",
+  "slug": "humana-healthy-horizons-kentucky",
+  "stateCode": "KY",
+  "programType": "medicaid",
+  "parentPlan": "Humana Healthy Horizons",
+  "url": "https://www.humana.com/medicaid/kentucky",
+  "description": "Humana Healthy Horizons is Humana's Kentucky Medicaid managed care plan, serving members across all 120 Kentucky counties. The plan covers comprehensive substance use disorder treatment, behavioral health, and integrated care for members with co-occurring conditions. Humana Healthy Horizons also provides specialized supports for pregnant members and members transitioning out of incarceration.",
+  "coverageHighlights": [
+    "Medical detox (ASAM 3.7 and 4) with authorization through Humana's behavioral health team",
+    "Residential SUD treatment (ASAM 3.1, 3.3, 3.5) based on ASAM medical necessity",
+    "Partial Hospitalization (PHP, ASAM 2.5) and Intensive Outpatient (IOP, ASAM 2.1)",
+    "Outpatient SUD therapy, group counseling, and relapse prevention",
+    "Medication-Assisted Treatment — Suboxone, buprenorphine products, methadone, Vivitrol",
+    "Integrated dual-diagnosis care for depression, anxiety, PTSD, and other co-occurring conditions",
+    "Non-emergency medical transportation (NEMT) to SUD appointments",
+    "Maternity programs that coordinate MAT for pregnant members (including Subutex)"
+  ],
+  "priorAuthNotes": "Humana Healthy Horizons typically requires prior authorization for residential SUD admissions and concurrent review for continued-stay authorization. MAT prescriptions may be subject to pharmacy prior authorization depending on the specific medication.",
+  "levelsOfCareCovered": ["1", "2.1", "2.5", "3.1", "3.3", "3.5", "3.7", "4"],
+  "matCovered": ["suboxone", "subutex", "methadone", "vivitrol", "naltrexone"],
+  "memberBenefitsNote": "Members have access to Humana's Care Management program, a 24/7 nurse advice line, pharmacy benefits through Humana's formulary, and specialty programs for high-risk pregnancy and SUD.",
+  "contractStatus": "pending"
+}

@@ -1,0 +1,10 @@
+{
+  "name": "St. Matthews",
+  "slug": "st-matthews",
+  "type": "neighborhood",
+  "stateCode": "KY",
+  "distanceFromFacility": "Approximately 8–12 miles east of the facility",
+  "transitNote": "Accessible via I-64 west and Shelbyville Road. Driving time is typically 15–25 minutes. TARC bus service connects St. Matthews to central Louisville along multiple corridors.",
+  "geo": { "lat": 38.2526, "lng": -85.6311 },
+  "localContext": "St. Matthews is a city within Jefferson County, KY, just east of downtown Louisville with a population of roughly 17,000. As part of Greater Louisville, St. Matthews residents have full access to Kentucky Medicaid managed care plans and to Louisville-based substance use disorder treatment facilities including Golden Grove Recovery."
+}

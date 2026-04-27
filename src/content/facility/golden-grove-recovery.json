@@ -1,0 +1,61 @@
+{
+  "name": "Golden Grove Recovery",
+  "slug": "golden-grove-recovery",
+  "status": "opening_soon",
+  "openingNote": "Golden Grove Recovery is preparing to open in Louisville, KY. Our admissions team is accepting referrals and insurance-verification requests now.",
+  "city": "Louisville",
+  "state": "Kentucky",
+  "stateCode": "KY",
+  "address": {
+    "street": "4418 Malcolm Ave",
+    "city": "Louisville",
+    "state": "KY",
+    "postalCode": "40211",
+    "country": "US"
+  },
+  "geo": { "lat": 38.1771149, "lng": -85.7913178 },
+  "phone": "(502) 610-4829",
+  "phoneTel": "+15026104829",
+  "email": "admissions@goldengroverecovery.com",
+  "hoursNote": "24/7 Admissions",
+  "parent": {
+    "name": "Alsos Behavioral Health",
+    "url": "https://alsosbehavioralhealth.com"
+  },
+  "medicalDirectors": [
+    {
+      "name": "Dr. Daniel Sumrock",
+      "credentials": ["MD"],
+      "role": "Medical Director"
+    },
+    {
+      "name": "Dr. Willmore",
+      "credentials": ["MD"],
+      "role": "Medical Director"
+    }
+  ],
+  "accreditations": [],
+  "insurance": {
+    "medicaidStatus": "opening_soon",
+    "expectedMedicaidPlans": [
+      "passport-health-plan",
+      "anthem-medicaid-kentucky",
+      "humana-healthy-horizons-kentucky",
+      "wellcare-of-kentucky",
+      "aetna-better-health-of-kentucky",
+      "united-healthcare-community-plan-kentucky"
+    ],
+    "commercialCarriers": [
+      "Blue Cross Blue Shield (Anthem)",
+      "Aetna",
+      "Centene (Ambetter)",
+      "UnitedHealthcare",
+      "Optum",
+      "Humana",
+      "Cigna / Evernorth"
+    ],
+    "disclaimerPreOpening": "Golden Grove Recovery is preparing to open and expects to be in-network with all Kentucky Medicaid MCOs and several major commercial carriers. Contact admissions to confirm current contract status for your specific plan.",
+    "disclaimerMedicaid": "Coverage depends on your specific plan, plan year, and medical necessity determination. We will verify benefits before admission."
+  },
+  "mapEmbedUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3671.3983387843036!2d-85.7913178!3d38.1771149!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x886913f4bb47cce1%3A0x3b1eb48eee1eb461!2sGolden%20Grove%20Recovery!5e1!3m2!1sen!2sus!4v1775076603679!5m2!1sen!2sus"
+}

@@ -1,0 +1,24 @@
+{
+  "name": "Anthem Blue Cross Blue Shield Medicaid",
+  "shortName": "Anthem Medicaid",
+  "slug": "anthem-medicaid-kentucky",
+  "stateCode": "KY",
+  "programType": "medicaid",
+  "parentPlan": "Anthem Blue Cross and Blue Shield Medicaid",
+  "url": "https://www.anthem.com/ky/medicaid",
+  "description": "Anthem Blue Cross Blue Shield Medicaid is one of Kentucky's managed care organizations, covering Medicaid members across the state with a broad behavioral health and substance use disorder (SUD) benefit. Anthem's Kentucky Medicaid plan covers the full ASAM continuum for SUD treatment, including detox, residential, PHP, IOP, outpatient, and medication-assisted treatment.",
+  "coverageHighlights": [
+    "Medical withdrawal management (detox) at ASAM levels 3.7 and 4",
+    "Residential and inpatient SUD treatment (ASAM 3.1, 3.3, 3.5)",
+    "Partial Hospitalization (PHP) and Intensive Outpatient (IOP)",
+    "Standard outpatient SUD counseling with no arbitrary visit limits",
+    "Medication-Assisted Treatment — including Suboxone, methadone, and Vivitrol",
+    "Integrated treatment for co-occurring mental health conditions (dual diagnosis)",
+    "Coordinated care for pregnant members with SUD via Kentucky's expanded maternal benefit"
+  ],
+  "priorAuthNotes": "Residential SUD admissions and some MAT induction scenarios typically require prior authorization or concurrent review. Anthem generally applies ASAM criteria for medical-necessity determinations.",
+  "levelsOfCareCovered": ["1", "2.1", "2.5", "3.1", "3.3", "3.5", "3.7", "4"],
+  "matCovered": ["suboxone", "subutex", "methadone", "vivitrol", "naltrexone"],
+  "memberBenefitsNote": "Anthem Medicaid members have access to 24/7 nurse line support, case management for high-risk SUD cases, and non-emergency medical transportation (NEMT) to treatment appointments.",
+  "contractStatus": "pending"
+}

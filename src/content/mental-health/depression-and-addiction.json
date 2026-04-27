@@ -1,0 +1,25 @@
+{
+  "name": "Depression and Addiction",
+  "slug": "depression-and-addiction",
+  "dsm5Code": "F32, F33",
+  "coOccurringWithSudNote": "Depression and substance use disorder co-occur at very high rates: roughly one in three adults with major depressive disorder also experiences a substance use disorder, and the relationship runs both ways — depression increases SUD risk, and chronic substance use worsens depression. Treating one without the other is associated with poorer outcomes for both.",
+  "selfMedicationSigns": [
+    "Drinking or using to numb persistent sadness, hopelessness, or emptiness",
+    "Using stimulants to overcome low energy or motivation",
+    "Using opioids or sedatives to escape emotional pain",
+    "Sleep changes (too much or too little) tied to use",
+    "Withdrawal periods that intensify depressive symptoms",
+    "Loss of interest in activities that previously brought pleasure",
+    "Suicidal ideation that surfaces during withdrawal or use"
+  ],
+  "integratedTreatmentApproach": "Integrated dual-diagnosis treatment addresses depression and SUD simultaneously rather than sequentially. The approach pairs evidence-based addiction treatment (medical detox, MAT where indicated, structured behavioral therapy) with psychiatric assessment, medication management for depression, and trauma-informed therapy. SSRIs and other antidepressants are typically introduced after detox stabilization and require several weeks for therapeutic effect.",
+  "recommendedTherapies": [
+    "cognitive-behavioral-therapy-cbt",
+    "dialectical-behavior-therapy-dbt",
+    "trauma-focused-therapy",
+    "individual-therapy",
+    "group-therapy",
+    "motivational-interviewing"
+  ],
+  "medicaidCoverageSummary": "All six Kentucky Medicaid MCOs cover integrated dual-diagnosis treatment. Behavioral health and SUD services are administered as a unified benefit, meaning psychiatric medication management, therapy for depression, and SUD treatment can all be billed and coordinated within the same episode of care."
+}

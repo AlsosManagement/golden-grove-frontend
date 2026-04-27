@@ -1,0 +1,25 @@
+{
+  "name": "WellCare of Kentucky",
+  "shortName": "WellCare",
+  "slug": "wellcare-of-kentucky",
+  "stateCode": "KY",
+  "programType": "medicaid",
+  "parentPlan": "WellCare (Centene Corporation)",
+  "url": "https://www.wellcareky.com/",
+  "description": "WellCare of Kentucky is a Centene Corporation Medicaid managed care plan serving Kentucky Medicaid members statewide. WellCare covers the full continuum of substance use disorder treatment — from medical detox through outpatient MAT — with a focus on integrated behavioral health for members with co-occurring mental health conditions.",
+  "coverageHighlights": [
+    "Medical withdrawal management (ASAM 3.7 and 4) with authorization",
+    "Residential SUD treatment (ASAM 3.1, 3.3, 3.5) based on ASAM medical-necessity criteria",
+    "PHP (ASAM 2.5) and IOP (ASAM 2.1) as step-down or step-up levels",
+    "Outpatient SUD counseling — individual, group, and family",
+    "Medication-Assisted Treatment — Suboxone, methadone, Vivitrol, oral naltrexone",
+    "Dual-diagnosis and integrated behavioral health services",
+    "Peer support and recovery coaching as a covered Medicaid benefit",
+    "Non-emergency medical transportation (NEMT) for treatment visits"
+  ],
+  "priorAuthNotes": "WellCare of Kentucky typically applies ASAM criteria for medical-necessity determinations. Residential SUD admissions generally require prior authorization; outpatient services, PHP, and IOP may be handled through notification and concurrent review.",
+  "levelsOfCareCovered": ["1", "2.1", "2.5", "3.1", "3.3", "3.5", "3.7", "4"],
+  "matCovered": ["suboxone", "methadone", "vivitrol", "naltrexone"],
+  "memberBenefitsNote": "WellCare members have access to a 24/7 nurse advice line, care management for complex SUD and dual-diagnosis needs, and Centene's integrated behavioral health network.",
+  "contractStatus": "pending"
+}

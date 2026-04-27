@@ -1,0 +1,25 @@
+{
+  "name": "PTSD, Trauma, and Addiction",
+  "slug": "ptsd-trauma-and-addiction",
+  "dsm5Code": "F43.10",
+  "coOccurringWithSudNote": "Post-traumatic stress disorder (PTSD) and substance use disorder co-occur at exceptionally high rates: studies estimate that 30–50% of people in SUD treatment meet criteria for current or lifetime PTSD. Untreated trauma is one of the strongest predictors of relapse, and substance use is one of the most common ways people cope with intrusive symptoms, hyperarousal, and avoidance.",
+  "selfMedicationSigns": [
+    "Using to suppress intrusive memories, flashbacks, or nightmares",
+    "Drinking or using to fall asleep when nightmares disrupt rest",
+    "Using to manage hyperarousal, anger, or hypervigilance",
+    "Substance use that intensifies after trauma anniversaries or triggers",
+    "Numbing emotions to avoid trauma-related distress",
+    "Increased use during periods of perceived threat or instability",
+    "Severe withdrawal anxiety that mirrors trauma-related arousal"
+  ],
+  "integratedTreatmentApproach": "Trauma-informed dual-diagnosis treatment addresses PTSD and SUD simultaneously rather than sequentially — research consistently shows that delaying trauma treatment until \"after recovery\" leads to worse outcomes for both conditions. Treatment combines structured SUD care, evidence-based trauma therapies (EMDR, trauma-focused CBT, prolonged exposure), trauma-informed group programming, and psychiatric medication management for sleep and arousal symptoms.",
+  "recommendedTherapies": [
+    "emdr",
+    "trauma-focused-therapy",
+    "cognitive-behavioral-therapy-cbt",
+    "dialectical-behavior-therapy-dbt",
+    "individual-therapy",
+    "group-therapy"
+  ],
+  "medicaidCoverageSummary": "All six Kentucky Medicaid MCOs cover integrated treatment for PTSD co-occurring with SUD, including evidence-based trauma therapies (EMDR, trauma-focused CBT) and psychiatric medication management. Trauma-focused services are a core component of Kentucky's covered behavioral health benefit."
+}

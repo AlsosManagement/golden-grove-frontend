@@ -1,0 +1,39 @@
+{
+  "name": "Heroin Addiction",
+  "slug": "heroin",
+  "category": "opioids",
+  "parent": "opioids",
+  "synonyms": ["heroin addiction", "diacetylmorphine", "dope", "smack"],
+  "icd10": ["F11.20"],
+  "dsm5Name": "Opioid Use Disorder (OUD) — heroin",
+  "overview": "Heroin is an illicit opioid derived from morphine. Even without active heroin use, the street heroin supply in Kentucky and most U.S. markets is now heavily contaminated with illicit fentanyl — meaning heroin addiction today carries overdose risks nearly identical to fentanyl addiction. Treatment combines medical withdrawal management, MAT, and structured behavioral care.",
+  "signs": [
+    "Injection track marks, abscesses, or skin infections",
+    "Pinpoint pupils, nodding off, slurred speech",
+    "Weight loss, poor hygiene, declining appearance",
+    "Secrecy, isolation from family and friends",
+    "Financial problems, missing valuables, theft",
+    "Continued use despite serious health, legal, or relational consequences",
+    "Withdrawal symptoms when unable to use"
+  ],
+  "withdrawalTimeline": [
+    { "window": "6–12 hours", "symptoms": ["Anxiety", "agitation", "muscle aches", "yawning", "lacrimation", "sweating"] },
+    { "window": "1–3 days", "symptoms": ["Peak intensity: nausea", "vomiting", "diarrhea", "abdominal cramps", "dilated pupils", "insomnia", "strong cravings"] },
+    { "window": "3–7 days", "symptoms": ["Acute physical symptoms subside", "fatigue", "residual sleep disruption and dysphoria"] },
+    { "window": "Weeks 2–8+", "symptoms": ["Post-acute withdrawal: cravings", "mood instability", "anhedonia — overdose risk rises if a relapse occurs after lost tolerance"] }
+  ],
+  "treatmentApproach": [
+    { "title": "Medical detox with MAT induction", "detail": "Supervised withdrawal with buprenorphine induction is the clinical standard for heroin OUD. MAT started during detox substantially improves retention.", "linksTo": ["/levels-of-care/medical-detox/"] },
+    { "title": "Residential treatment", "detail": "21–28 days of residential care provides the safest environment during early abstinence when overdose risk from lost tolerance peaks.", "linksTo": ["/levels-of-care/residential-inpatient/"] },
+    { "title": "Medication-Assisted Treatment", "detail": "Suboxone, Subutex, methadone, and Vivitrol are all effective for heroin OUD. MAT is associated with large reductions in overdose mortality.", "linksTo": ["/substance-use/opioids/mat/"] },
+    { "title": "Step-down care", "detail": "PHP, IOP, and outpatient maintain clinical contact during the highest-risk post-residential window.", "linksTo": ["/levels-of-care/partial-hospitalization-php/", "/levels-of-care/intensive-outpatient-iop/"] },
+    { "title": "Integrated dual-diagnosis care", "detail": "Heroin OUD co-occurs with trauma and mood disorders at high rates; integrated treatment addresses both together.", "linksTo": ["/mental-health/"] }
+  ],
+  "localContext": "Most heroin sold in Kentucky today is contaminated with fentanyl, which is why overdose risk for heroin users has grown dramatically. Louisville and surrounding Jefferson County continue to report high demand for OUD treatment, and Kentucky Medicaid covers the full treatment continuum.",
+  "medicaidCoverageSummary": "All six Kentucky Medicaid MCOs cover detox, residential, PHP, IOP, outpatient, and MAT for heroin-related OUD. Naloxone is a covered pharmacy benefit for members at risk.",
+  "faqs": [
+    { "q": "Is heroin addiction treatment different from other opioids?", "a": "Clinically, treatment for heroin OUD uses the same evidence-based approach — MAT plus structured behavioral care — as other opioid use disorders. The practical difference today is that most street heroin is contaminated with fentanyl, raising overdose risk substantially." },
+    { "q": "How long does heroin withdrawal last?", "a": "Acute withdrawal typically peaks at 1–3 days and subsides over about a week. Post-acute withdrawal symptoms (sleep, mood, cravings) can continue for weeks and are a key relapse-risk window." },
+    { "q": "Does Kentucky Medicaid cover heroin addiction treatment?", "a": "Yes. All six Kentucky Medicaid MCOs cover detox, residential, PHP, IOP, outpatient, and MAT for heroin OUD." }
+  ]
+}

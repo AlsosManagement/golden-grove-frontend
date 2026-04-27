@@ -1,0 +1,25 @@
+{
+  "name": "Anxiety and Addiction",
+  "slug": "anxiety-and-addiction",
+  "dsm5Code": "F41.1, F41.0, F40",
+  "coOccurringWithSudNote": "Anxiety disorders — generalized anxiety disorder, panic disorder, social anxiety, and specific phobias — co-occur with substance use disorder at rates roughly two to three times higher than in the general population. Alcohol, benzodiazepines, opioids, and cannabis are most commonly used to self-medicate anxiety, and chronic use almost always worsens baseline anxiety over time.",
+  "selfMedicationSigns": [
+    "Drinking or using benzodiazepines to manage social situations or panic",
+    "Needing alcohol to fall asleep or to face daily stressors",
+    "Cannabis use that escalates from occasional to daily for \"calm\"",
+    "Rebound anxiety in the morning or between doses",
+    "Avoiding situations that previously triggered anxiety only when sober",
+    "Use that began with a legitimate prescription and escalated",
+    "Severe withdrawal anxiety that drives ongoing use"
+  ],
+  "integratedTreatmentApproach": "Integrated treatment addresses both the anxiety driving use and the substance use that is now amplifying anxiety. The clinical sequence typically involves medical stabilization (especially critical for benzodiazepine taper), structured behavioral therapy targeting both conditions, and — where indicated — non-addictive psychiatric medications (SSRIs, SNRIs, buspirone) that treat anxiety without dependence risk. Benzodiazepine prescribing for patients with active SUD is generally avoided.",
+  "recommendedTherapies": [
+    "cognitive-behavioral-therapy-cbt",
+    "dialectical-behavior-therapy-dbt",
+    "trauma-focused-therapy",
+    "mindfulness-practices",
+    "individual-therapy",
+    "group-therapy"
+  ],
+  "medicaidCoverageSummary": "All six Kentucky Medicaid MCOs cover integrated treatment for anxiety co-occurring with SUD, including psychiatric evaluation, medication management with non-addictive alternatives to benzodiazepines, and evidence-based therapies. Pharmacy benefits cover SSRIs, SNRIs, buspirone, and other non-controlled anxiety medications."
+}

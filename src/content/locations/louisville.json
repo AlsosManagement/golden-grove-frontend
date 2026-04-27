@@ -1,0 +1,10 @@
+{
+  "name": "Louisville",
+  "slug": "louisville",
+  "type": "city",
+  "stateCode": "KY",
+  "distanceFromFacility": "Primary catchment — facility is located in Louisville",
+  "transitNote": "Located at 4418 Malcolm Ave in west Louisville, accessible from I-264 (Watterson Expressway) and I-64. On-site parking; TARC bus service available on nearby corridors.",
+  "geo": { "lat": 38.2527, "lng": -85.7585 },
+  "localContext": "Louisville (Jefferson County) is Kentucky's largest metro area and one of the most opioid- and overdose-impacted cities in the country. Demand for substance use disorder treatment in Louisville consistently exceeds supply, and Kentucky Medicaid MCOs serve the majority of low-income Louisville residents with SUD. Golden Grove Recovery is positioned to serve the city's full demographic catchment — west Louisville, downtown, the Highlands, the South End, and the East End — with Medicaid-first access."
+}

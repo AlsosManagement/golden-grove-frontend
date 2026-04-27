@@ -1,0 +1,40 @@
+{
+  "name": "Methamphetamine Addiction",
+  "slug": "meth-methamphetamine",
+  "category": "stimulants",
+  "parent": "stimulants",
+  "synonyms": ["meth", "crystal meth", "methamphetamine", "ice"],
+  "icd10": ["F15.10", "F15.20"],
+  "dsm5Name": "Stimulant Use Disorder (methamphetamine-type)",
+  "overview": "Methamphetamine is a powerful stimulant that causes extreme dopamine release, strong psychological dependence, and significant medical and psychiatric harm. Kentucky has seen a sustained rise in meth-related hospitalizations and deaths — often complicated by co-use with opioids. There are no FDA-approved medications for meth addiction, which makes structured behavioral treatment and integrated mental health care the standard of care.",
+  "signs": [
+    "Rapid, dramatic weight loss",
+    "Dental decay (\"meth mouth\") and skin sores",
+    "Long waking periods (days) followed by extended sleep",
+    "Hyperactivity, rapid speech, hyperfocus on repetitive tasks",
+    "Paranoia, hallucinations, or psychosis",
+    "Severe mood swings and aggression",
+    "Deteriorating work, school, and family functioning",
+    "Using despite escalating medical, legal, or psychiatric consequences"
+  ],
+  "withdrawalTimeline": [
+    { "window": "24–72 hours", "symptoms": ["Crash: severe fatigue", "hypersomnia", "depression", "increased appetite"] },
+    { "window": "Days 3–10", "symptoms": ["Intense dysphoria", "anhedonia", "strong cravings", "cognitive dulling", "irritability"] },
+    { "window": "Weeks 2–4", "symptoms": ["Mood and sleep gradually improve", "cravings remain strong", "anxiety and depression may persist"] },
+    { "window": "Weeks 4–12+", "symptoms": ["Post-acute withdrawal: mood lability", "attention problems", "anhedonia — extended relapse-risk window"] }
+  ],
+  "treatmentApproach": [
+    { "title": "Medically monitored stabilization", "detail": "While meth withdrawal is not typically life-threatening, medical monitoring supports safety in patients with psychiatric symptoms, cardiac complications, or polysubstance use.", "linksTo": ["/levels-of-care/medical-detox/"] },
+    { "title": "Residential treatment", "detail": "Structured residential care gives patients protected time during the acute post-use psychiatric window and supports early skill-building.", "linksTo": ["/levels-of-care/residential-inpatient/"] },
+    { "title": "Contingency management", "detail": "Contingency management (CM) is the most effective behavioral treatment for stimulant use disorder and is supported by strong evidence.", "linksTo": ["/therapies/contingency-management/"] },
+    { "title": "Cognitive Behavioral Therapy", "detail": "CBT addresses relapse triggers, thought patterns, and skill deficits that drive return-to-use.", "linksTo": ["/therapies/cognitive-behavioral-therapy-cbt/"] },
+    { "title": "Integrated mental health care", "detail": "Meth use frequently produces or worsens anxiety, depression, and psychotic symptoms; integrated psychiatric and SUD care is essential.", "linksTo": ["/mental-health/"] }
+  ],
+  "localContext": "Kentucky continues to see rising methamphetamine-related deaths, with meth increasingly involved in polysubstance overdoses alongside fentanyl. Louisville's demand for stimulant-focused treatment has grown meaningfully over the past five years.",
+  "medicaidCoverageSummary": "All six Kentucky Medicaid MCOs cover detox, residential, PHP, IOP, and outpatient SUD services for stimulant use disorder. There are no FDA-approved medications specifically for meth addiction, but behavioral treatment and integrated psychiatric care for co-occurring conditions are covered.",
+  "faqs": [
+    { "q": "Is meth withdrawal dangerous?", "a": "Meth withdrawal is usually not life-threatening in the way alcohol or benzodiazepine withdrawal can be, but it produces severe depression and suicidal ideation in some patients. Medical and psychiatric monitoring is strongly recommended." },
+    { "q": "Is there a medication for meth addiction?", "a": "No medication is FDA-approved for stimulant use disorder. Evidence-based behavioral treatments — particularly contingency management and CBT — are the standard of care, along with treatment of any co-occurring psychiatric conditions." },
+    { "q": "Does Kentucky Medicaid cover meth rehab?", "a": "Yes. All Kentucky Medicaid MCOs cover detox, residential, PHP, IOP, and outpatient services for stimulant use disorder based on medical-necessity determinations." }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "name": "Outpatient Treatment",
+  "slug": "outpatient",
+  "asamCode": "1",
+  "shortName": "Outpatient",
+  "typicalDuration": "Ongoing — frequency tapers with stability",
+  "hoursPerWeek": "Under 9 hours per week; often 1–2 sessions weekly",
+  "description": "Standard outpatient treatment provides individual therapy, group therapy, and medication management on a flexible schedule. Outpatient is the lowest-intensity level of care in the ASAM continuum and is typically used as a long-term continuing-care strategy after higher levels of care, or as a primary treatment for mild substance use disorder.",
+  "whoBenefits": [
+    "Patients stepping down from IOP with sustained recovery progress",
+    "Patients with mild SUD who do not require higher-intensity programming",
+    "Patients continuing MAT with periodic clinical check-ins",
+    "Patients needing relapse-prevention support while fully reintegrated into work and family life",
+    "Patients needing ongoing psychiatric medication management for co-occurring conditions"
+  ],
+  "typicalDay": "Outpatient visits are typically weekly or biweekly and may include individual therapy, medication management, a weekly group, and family sessions as needed. MAT patients continue medication refills and check-ins at the outpatient level indefinitely when clinically appropriate.",
+  "medicaidCoverageSummary": "All six Kentucky Medicaid MCOs cover outpatient SUD services (ASAM 1) — including therapy, MAT management, and group services — with no arbitrary visit caps when medically necessary."
+}

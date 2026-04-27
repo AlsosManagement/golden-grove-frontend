@@ -1,0 +1,25 @@
+{
+  "name": "UnitedHealthcare Community Plan of Kentucky",
+  "shortName": "UnitedHealthcare Community Plan",
+  "slug": "united-healthcare-community-plan-kentucky",
+  "stateCode": "KY",
+  "programType": "medicaid",
+  "parentPlan": "UnitedHealthcare Community & State",
+  "url": "https://www.uhccommunityplan.com/ky",
+  "description": "UnitedHealthcare Community Plan of Kentucky is UnitedHealthcare's Kentucky Medicaid managed care plan. It covers the full ASAM substance use disorder (SUD) treatment continuum and integrates behavioral health services for members with co-occurring mental health conditions. The plan also administers specialized programs for pregnant members and members transitioning from justice-involved settings.",
+  "coverageHighlights": [
+    "Medical withdrawal management (ASAM 3.7 and 4) with authorization",
+    "Residential SUD treatment (ASAM 3.1, 3.3, 3.5) based on medical-necessity determination",
+    "PHP (ASAM 2.5) and IOP (ASAM 2.1) with concurrent-review authorization",
+    "Standard outpatient SUD counseling, group therapy, and family therapy",
+    "Medication-Assisted Treatment — Suboxone, Subutex, methadone, Vivitrol, oral naltrexone",
+    "Integrated treatment for co-occurring mental health conditions",
+    "Maternity Support Services for pregnant members with SUD (coordinated MAT during pregnancy)",
+    "Non-emergency medical transportation (NEMT) for treatment appointments"
+  ],
+  "priorAuthNotes": "UnitedHealthcare Community Plan typically applies ASAM criteria for SUD medical-necessity determinations. Residential admissions require prior authorization; PHP/IOP are generally handled through notification plus concurrent review.",
+  "levelsOfCareCovered": ["1", "2.1", "2.5", "3.1", "3.3", "3.5", "3.7", "4"],
+  "matCovered": ["suboxone", "subutex", "methadone", "vivitrol", "naltrexone"],
+  "memberBenefitsNote": "Members access UnitedHealthcare's 24/7 nurse advice line, Optum Behavioral Health network for dual-diagnosis services, and care management for complex SUD and pregnancy-related cases.",
+  "contractStatus": "pending"
+}

@@ -1,0 +1,18 @@
+{
+  "name": "Partial Hospitalization Program (PHP)",
+  "slug": "partial-hospitalization-php",
+  "asamCode": "2.5",
+  "shortName": "PHP",
+  "typicalDuration": "2–6 weeks",
+  "hoursPerWeek": "20–30+ hours per week, typically 5–6 days",
+  "description": "Partial Hospitalization (PHP) is a structured daytime treatment program for patients who need more intensive care than traditional outpatient but do not require 24/7 supervision. Patients attend programming 5–6 days per week while living at home, a sober living environment, or transitional housing. PHP is often a step-down from residential or a step-up from IOP.",
+  "whoBenefits": [
+    "Patients stepping down from residential treatment who need continued structure",
+    "Patients who need more than IOP but do not require overnight supervision",
+    "Patients who are stable enough to manage evenings and nights outside of a facility",
+    "Patients with co-occurring mental health conditions needing integrated daytime programming",
+    "Patients balancing treatment with family responsibilities or part-time work in recovery"
+  ],
+  "typicalDay": "A PHP day typically runs 6–8 hours and combines individual therapy, group therapy (CBT, DBT, trauma-focused, relapse prevention), psychoeducation, medication management, and family involvement. Evenings and weekends are spent at home or in a sober living environment with recovery-focused support.",
+  "medicaidCoverageSummary": "All six Kentucky Medicaid MCOs cover PHP (ASAM 2.5) based on medical-necessity determination. PHP admissions are generally handled through notification and concurrent review rather than lengthy pre-authorization."
+}

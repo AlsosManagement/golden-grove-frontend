@@ -1,0 +1,49 @@
+---
+import { getEntry } from "astro:content";
+
+export interface Props {
+  variant?: "pre-opening" | "medicaid" | "both";
+  compact?: boolean;
+}
+
+const { variant = "pre-opening", compact = false } = Astro.props as Props;
+
+const facility = await getEntry("facility", "golden-grove-recovery");
+const insurance = facility?.data.insurance;
+
+const messages: string[] = [];
+if (insurance) {
+  if (variant === "pre-opening" || variant === "both") messages.push(insurance.disclaimerPreOpening);
+  if (variant === "medicaid" || variant === "both") messages.push(insurance.disclaimerMedicaid);
+}
+---
+
+{messages.length > 0 && (
+  <aside
+    class:list={["insurance-disclaimer", compact && "is-compact"]}
+    role="note"
+    aria-label="Insurance and admissions disclaimer"
+  >
+    {messages.map((m) => <p>{m}</p>)}
+  </aside>
+)}
+
+<style>
+  .insurance-disclaimer {
+    border-left: 3px solid #8C6934;
+    background: #FAF7F2;
+    color: #461F01;
+    padding: 14px 18px;
+    border-radius: 4px;
+    font-size: 13px;
+    line-height: 1.6;
+    margin: 16px 0;
+  }
+  .insurance-disclaimer p + p {
+    margin-top: 8px;
+  }
+  .insurance-disclaimer.is-compact {
+    padding: 10px 14px;
+    font-size: 12px;
+  }
+</style>

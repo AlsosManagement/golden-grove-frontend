@@ -1,0 +1,20 @@
+{
+  "name": "Residential Inpatient Treatment",
+  "slug": "residential-inpatient",
+  "asamCode": "3.5",
+  "shortName": "Residential",
+  "typicalDuration": "21–28 days (extended stays available based on medical necessity)",
+  "hoursPerWeek": "24/7 clinical support with 30+ hours of structured programming per week",
+  "description": "Residential inpatient treatment is 24/7 supervised care in a structured, sober environment. Residential programming addresses the medical, psychological, and social dimensions of substance use disorder through individual therapy, group therapy, psychoeducation, family involvement, and medication management — including MAT where indicated. It is the standard of care for patients who need the stability and protection of a structured environment after detox.",
+  "whoBenefits": [
+    "Patients who completed detox and need continued structure during early abstinence",
+    "Patients with an unstable home environment or active drug use at home",
+    "Patients with prior unsuccessful outpatient attempts",
+    "Patients with co-occurring mental health conditions needing integrated care",
+    "Patients with opioid use disorder requiring MAT stabilization",
+    "Patients with high overdose risk from lost tolerance"
+  ],
+  "typicalDay": "A typical day combines individual therapy, group therapy (CBT, DBT, relapse prevention, process groups), psychoeducation, family sessions, medication management, recreational/wellness activities (yoga, art, fitness), and structured meals and rest. Patients also meet with medical and psychiatric providers throughout the stay.",
+  "medicaidCoverageSummary": "All six Kentucky Medicaid MCOs cover residential SUD treatment (ASAM 3.1, 3.3, 3.5) based on ASAM medical-necessity determination. Prior authorization with concurrent review is typical.",
+  "imdExclusionNote": "Kentucky's Medicaid 1115 demonstration waiver allows Medicaid to pay for residential SUD treatment in IMD-sized facilities, making residential care accessible to Medicaid members statewide."
+}

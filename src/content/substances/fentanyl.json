@@ -1,0 +1,39 @@
+{
+  "name": "Fentanyl Addiction",
+  "slug": "fentanyl",
+  "category": "opioids",
+  "parent": "opioids",
+  "synonyms": ["illicit fentanyl", "synthetic opioid addiction", "fent"],
+  "icd10": ["F11.20"],
+  "dsm5Name": "Opioid Use Disorder (OUD) — fentanyl",
+  "overview": "Fentanyl is a synthetic opioid 50–100 times more potent than morphine. Illicit fentanyl is now the single largest driver of overdose deaths in Kentucky and nationwide, often mixed into counterfeit pills and other street drugs without the user's knowledge. Because of its potency, fentanyl addiction is exceptionally dangerous — and it is also treatable with evidence-based MAT plus structured behavioral care.",
+  "signs": [
+    "Using pills or powders obtained outside a prescription",
+    "Unusually rapid tolerance escalation",
+    "History of non-fatal overdose or near-overdose",
+    "Nodding off, pinpoint pupils, slowed breathing after use",
+    "Continued use despite severe consequences (medical, legal, relational)",
+    "Needing fentanyl to function or prevent withdrawal",
+    "Drug-testing results showing fentanyl when not prescribed"
+  ],
+  "withdrawalTimeline": [
+    { "window": "8–24 hours", "symptoms": ["Anxiety", "yawning", "runny nose", "sweating", "insomnia", "muscle aches"] },
+    { "window": "1–3 days", "symptoms": ["Peak intensity: nausea", "vomiting", "diarrhea", "abdominal cramps", "goosebumps", "severe cravings"] },
+    { "window": "3–7 days", "symptoms": ["Acute physical symptoms subside", "mood disturbance and insomnia continue"] },
+    { "window": "Weeks 2–8+", "symptoms": ["Post-acute withdrawal: persistent cravings", "dysphoria", "sleep disruption — highest overdose-risk window after a period of abstinence"] }
+  ],
+  "treatmentApproach": [
+    { "title": "Medical detox with rapid MAT induction", "detail": "Fentanyl withdrawal is acute. Clinical monitoring with buprenorphine (Suboxone/Subutex) induction during detox substantially improves retention in treatment.", "linksTo": ["/levels-of-care/medical-detox/"] },
+    { "title": "Residential treatment", "detail": "Structured residential care provides safety during the early abstinence window when overdose risk from lost tolerance is highest.", "linksTo": ["/levels-of-care/residential-inpatient/"] },
+    { "title": "Medication-Assisted Treatment", "detail": "MAT with Suboxone, Subutex, methadone, or Vivitrol is the standard of care for fentanyl OUD. MAT halves overdose mortality.", "linksTo": ["/substance-use/opioids/mat/"] },
+    { "title": "Naloxone education and access", "detail": "Every patient and family member learns to recognize overdose and administer naloxone. Naloxone is a Kentucky Medicaid benefit.", "linksTo": ["/substance-use/opioids/overdose-naloxone/"] },
+    { "title": "Integrated mental health care", "detail": "Fentanyl OUD frequently co-occurs with trauma, depression, and anxiety. Integrated dual-diagnosis care addresses root drivers and improves long-term outcomes.", "linksTo": ["/mental-health/"] }
+  ],
+  "localContext": "Kentucky reported more than 2,000 overdose deaths in recent years, with illicit fentanyl involved in more than 80% of them. Jefferson County (Louisville) has consistently been among the most-affected counties in the state. The urgency of the fentanyl crisis makes rapid access to MAT and residential care a Kentucky Medicaid priority.",
+  "medicaidCoverageSummary": "All six Kentucky Medicaid MCOs cover the full SUD continuum for fentanyl OUD — detox, residential, PHP, IOP, outpatient, and MAT. Naloxone is also a Kentucky Medicaid pharmacy benefit for members at risk.",
+  "faqs": [
+    { "q": "How is fentanyl addiction treatment different from other opioids?", "a": "The clinical approach is similar — MAT plus behavioral care is the standard — but fentanyl's potency makes overdose risk during any relapse window substantially higher. Treatment emphasizes rapid MAT induction, longer stabilization, and universal naloxone access." },
+    { "q": "Can I detox from fentanyl at home?", "a": "Fentanyl withdrawal is not typically life-threatening the way alcohol withdrawal is, but it is severe, and unmanaged withdrawal dramatically increases relapse and fatal overdose risk. Medical detox with MAT induction is strongly recommended." },
+    { "q": "Does Kentucky Medicaid cover fentanyl addiction treatment?", "a": "Yes. All six Kentucky Medicaid MCOs cover medical detox, residential treatment, PHP, IOP, outpatient, and MAT for fentanyl OUD." }
+  ]
+}

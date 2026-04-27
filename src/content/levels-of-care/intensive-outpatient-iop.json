@@ -1,0 +1,18 @@
+{
+  "name": "Intensive Outpatient Program (IOP)",
+  "slug": "intensive-outpatient-iop",
+  "asamCode": "2.1",
+  "shortName": "IOP",
+  "typicalDuration": "8–12 weeks",
+  "hoursPerWeek": "9–19 hours per week, typically 3–5 days",
+  "description": "Intensive Outpatient (IOP) is a structured but flexible program for patients who can maintain work, school, or family obligations while receiving regular treatment. IOP typically runs 3–5 days per week, in morning or evening tracks, with each session lasting approximately 3 hours. IOP is often a step-down from PHP or a step-up from standard outpatient.",
+  "whoBenefits": [
+    "Patients transitioning from PHP, residential, or detox",
+    "Patients who need more than weekly outpatient but can manage daily life without facility-based care",
+    "Patients returning to work or school while continuing treatment",
+    "Patients with stable housing and sober supports at home",
+    "Patients with co-occurring mental health conditions stable enough for outpatient psychiatric management"
+  ],
+  "typicalDay": "An IOP session typically includes group therapy, psychoeducation, and one individual therapy session per week. Evening tracks allow patients to work or attend school during the day. Patients also continue medication management and family or couples therapy as needed.",
+  "medicaidCoverageSummary": "All six Kentucky Medicaid MCOs cover IOP (ASAM 2.1) based on medical-necessity determination. IOP admissions are typically handled through notification and concurrent review."
+}

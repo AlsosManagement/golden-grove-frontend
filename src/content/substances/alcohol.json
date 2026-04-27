@@ -1,0 +1,39 @@
+{
+  "name": "Alcohol Use Disorder",
+  "slug": "alcohol",
+  "category": "alcohol",
+  "synonyms": ["alcoholism", "alcohol addiction", "alcohol dependence", "AUD"],
+  "icd10": ["F10.10", "F10.20"],
+  "dsm5Name": "Alcohol Use Disorder (AUD)",
+  "overview": "Alcohol Use Disorder (AUD) is a chronic medical condition defined by an impaired ability to stop or control alcohol use despite adverse consequences. AUD exists on a continuum from mild to severe and is one of the most common substance use disorders treated in Kentucky. Effective treatment pairs medical withdrawal management with evidence-based therapy and, where indicated, FDA-approved medication.",
+  "signs": [
+    "Drinking more, or for longer, than intended",
+    "Wanting to cut down but being unable to",
+    "Strong cravings or urges to drink",
+    "Drinking interfering with work, school, or family obligations",
+    "Continuing to drink despite relationship, legal, or physical-health consequences",
+    "Giving up important activities to drink or recover from drinking",
+    "Needing more alcohol to achieve the same effect (tolerance)",
+    "Experiencing withdrawal symptoms when alcohol wears off"
+  ],
+  "withdrawalTimeline": [
+    { "window": "6–12 hours", "symptoms": ["Anxiety", "tremor", "sweating", "nausea", "headache", "insomnia"] },
+    { "window": "12–24 hours", "symptoms": ["Hallucinations (auditory, visual, or tactile)", "escalating anxiety"] },
+    { "window": "24–48 hours", "symptoms": ["Seizure risk peaks", "elevated blood pressure and heart rate"] },
+    { "window": "48–72 hours", "symptoms": ["Delirium tremens (DTs) risk window: confusion, agitation, fever, severe autonomic instability"] },
+    { "window": "3–7 days", "symptoms": ["Acute symptoms resolve; protracted withdrawal (sleep disruption, mood changes) may persist for weeks"] }
+  ],
+  "treatmentApproach": [
+    { "title": "Medical detox", "detail": "Alcohol withdrawal can be life-threatening. Medically supervised detox with benzodiazepine taper and vitals monitoring is the standard of care for moderate-to-severe AUD.", "linksTo": ["/levels-of-care/medical-detox/"] },
+    { "title": "Residential treatment", "detail": "After stabilization, 21–28 days of residential treatment addresses the behavioral and psychological components of AUD in a structured, sober environment.", "linksTo": ["/levels-of-care/residential-inpatient/"] },
+    { "title": "Medication-Assisted Treatment", "detail": "FDA-approved medications — naltrexone (oral or Vivitrol), acamprosate, and disulfiram — reduce cravings and relapse risk when paired with therapy.", "linksTo": ["/substance-use/alcohol/medication-assisted/"] },
+    { "title": "Step-down to PHP, IOP, outpatient", "detail": "Structured step-down care maintains clinical contact during the highest-risk post-residential period.", "linksTo": ["/levels-of-care/partial-hospitalization-php/", "/levels-of-care/intensive-outpatient-iop/"] }
+  ],
+  "localContext": "Kentucky's rate of excessive alcohol use and alcohol-related deaths remains above the national average. Louisville's urban and suburban communities both report high demand for AUD treatment, and Kentucky Medicaid covers the full ASAM continuum — including medically supervised detox — for members meeting medical-necessity criteria.",
+  "medicaidCoverageSummary": "All six Kentucky Medicaid MCOs cover alcohol detox, residential treatment, PHP, IOP, outpatient, and MAT for AUD. Prior authorization is typical for residential admissions; detox is usually authorized urgently based on clinical presentation.",
+  "faqs": [
+    { "q": "Is it safe to detox from alcohol at home?", "a": "Moderate-to-severe alcohol withdrawal can cause seizures or delirium tremens and is potentially fatal. For anyone with a history of heavy or long-term use, medically supervised detox is strongly recommended." },
+    { "q": "Does Kentucky Medicaid cover alcohol rehab?", "a": "Yes. All Kentucky Medicaid MCOs cover medical detox, residential treatment, PHP, IOP, outpatient services, and FDA-approved medications (naltrexone, acamprosate, disulfiram) when medically necessary." },
+    { "q": "How long does alcohol rehab take?", "a": "Medical detox typically runs 3–7 days. Residential treatment commonly runs 21–28 days, followed by PHP (2–6 weeks) and IOP (8–12 weeks). Duration is individualized based on severity and progress." }
+  ]
+}

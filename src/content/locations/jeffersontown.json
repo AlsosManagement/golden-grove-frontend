@@ -1,0 +1,10 @@
+{
+  "name": "Jeffersontown",
+  "slug": "jeffersontown",
+  "type": "neighborhood",
+  "stateCode": "KY",
+  "distanceFromFacility": "Approximately 15–20 miles east of the facility",
+  "transitNote": "Accessible via I-64 west and the Watterson Expressway (I-264). Driving time is typically 25–35 minutes depending on traffic. TARC service connects parts of Jeffersontown to central Louisville.",
+  "geo": { "lat": 38.1947, "lng": -85.5644 },
+  "localContext": "Jeffersontown (J-town) is a city within Jefferson County, KY, with a population of roughly 27,000. As part of Greater Louisville, Jeffersontown residents have full access to Kentucky Medicaid managed care plans and to Louisville-based substance use disorder treatment facilities including Golden Grove Recovery."
+}

@@ -1,0 +1,38 @@
+{
+  "name": "Benzodiazepine Addiction",
+  "slug": "benzodiazepines",
+  "category": "benzodiazepines",
+  "synonyms": ["benzo addiction", "Xanax addiction", "Klonopin addiction", "Ativan addiction", "Valium addiction"],
+  "icd10": ["F13.10", "F13.20"],
+  "dsm5Name": "Sedative, Hypnotic, or Anxiolytic Use Disorder",
+  "overview": "Benzodiazepines — including alprazolam (Xanax), clonazepam (Klonopin), lorazepam (Ativan), and diazepam (Valium) — are prescribed for anxiety, insomnia, and seizure disorders. Long-term or high-dose use can produce physiological dependence, tolerance, and a substance use disorder. Benzodiazepine withdrawal is potentially dangerous and, like alcohol, can cause seizures — making medically supervised taper the clinical standard.",
+  "signs": [
+    "Using benzodiazepines in larger amounts or for longer than prescribed",
+    "Doctor shopping or obtaining prescriptions from multiple providers",
+    "Running out of medication early, requesting early refills",
+    "Combining benzodiazepines with alcohol or opioids",
+    "Drowsiness, slurred speech, impaired coordination",
+    "Memory problems and cognitive dulling",
+    "Anxiety or panic that only medication \"fixes\"",
+    "Withdrawal symptoms (anxiety, insomnia, tremor) when a dose is missed"
+  ],
+  "withdrawalTimeline": [
+    { "window": "6–24 hours (short-acting, e.g., Xanax) / 1–4 days (long-acting, e.g., Valium)", "symptoms": ["Rebound anxiety", "insomnia", "tremor", "sweating"] },
+    { "window": "1–7 days", "symptoms": ["Peak withdrawal: severe anxiety", "panic", "tremor", "sweating", "elevated heart rate", "seizure risk"] },
+    { "window": "1–4 weeks", "symptoms": ["Acute physical symptoms slowly subside on structured taper; sleep and mood remain disrupted"] },
+    { "window": "Months 1–12+", "symptoms": ["Protracted withdrawal (PAWS) in a subset of patients: persistent anxiety", "cognitive symptoms", "sleep disturbance"] }
+  ],
+  "treatmentApproach": [
+    { "title": "Medically supervised taper", "detail": "Abrupt cessation of benzodiazepines can cause seizures and is dangerous. Gradual taper under clinical supervision — often cross-tapering to a long-acting benzodiazepine — is the standard of care.", "linksTo": ["/levels-of-care/medical-detox/"] },
+    { "title": "Residential treatment", "detail": "Residential care supports patients through extended tapers and provides structured treatment of the anxiety or trauma that often underlies benzodiazepine use.", "linksTo": ["/levels-of-care/residential-inpatient/"] },
+    { "title": "Anxiety and trauma-focused therapy", "detail": "CBT, DBT, and trauma-focused therapy address the conditions for which benzodiazepines were originally prescribed — preventing relapse to medication after taper.", "linksTo": ["/therapies/cognitive-behavioral-therapy-cbt/", "/therapies/trauma-focused-therapy/"] },
+    { "title": "Step-down care", "detail": "PHP, IOP, and outpatient maintain clinical contact through the extended post-taper window when protracted symptoms may still emerge.", "linksTo": ["/levels-of-care/partial-hospitalization-php/", "/levels-of-care/intensive-outpatient-iop/"] }
+  ],
+  "localContext": "Benzodiazepine prescribing rates in Kentucky remain above the national average, and benzodiazepines are frequently present in polysubstance overdoses alongside opioids. Safe, medically supervised taper is essential to prevent withdrawal-related seizures.",
+  "medicaidCoverageSummary": "All six Kentucky Medicaid MCOs cover medically supervised benzodiazepine taper in detox, residential, PHP, IOP, and outpatient settings. Because tapers can extend for weeks to months, step-down coverage and coordinated outpatient care are especially important.",
+  "faqs": [
+    { "q": "Is it safe to stop benzodiazepines cold turkey?", "a": "No. Abrupt discontinuation of benzodiazepines can cause seizures and is potentially life-threatening, particularly after long-term or high-dose use. Always work with a clinician on a structured taper." },
+    { "q": "How long does a benzodiazepine taper take?", "a": "Tapers are individualized based on dose, duration of use, and patient response. Typical medically supervised tapers range from several weeks to several months; some patients with long-term or high-dose use require slower tapers." },
+    { "q": "Does Kentucky Medicaid cover benzodiazepine detox?", "a": "Yes. All six Kentucky Medicaid MCOs cover medically supervised benzodiazepine taper across the ASAM continuum when medically necessary." }
+  ]
+}
