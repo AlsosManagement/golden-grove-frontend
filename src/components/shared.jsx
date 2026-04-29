@@ -88,7 +88,7 @@ export function GlobalStyles() {
       .hero-section .hero-video-overlay {
         position: absolute;
         inset: 0;
-        background: linear-gradient(165deg, rgba(46, 20, 0, 0.82) 0%, rgba(70, 31, 1, 0.66) 45%, rgba(70, 31, 1, 0.55) 100%);
+        background: linear-gradient(165deg, rgba(30, 14, 0, 0.55) 0%, rgba(46, 20, 0, 0.4) 45%, rgba(46, 20, 0, 0.28) 100%);
         z-index: 1;
         pointer-events: none;
       }

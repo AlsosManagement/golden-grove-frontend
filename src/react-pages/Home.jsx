@@ -13,7 +13,7 @@ export default function Home() {
         background: B.coffeeDark,
         color: B.white, position: "relative", overflow: "hidden",
       }}>
-        <video className="hero-video" autoPlay muted loop playsInline preload="metadata" aria-hidden="true">
+        <video className="hero-video" autoPlay muted loop playsInline preload="auto" aria-hidden="true">
           <source src="https://videos.pexels.com/video-files/29061047/12561632_1920_1080_30fps.mp4" type="video/mp4" />
         </video>
         <div className="hero-video-overlay" aria-hidden="true" />

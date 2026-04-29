@@ -46,6 +46,7 @@ const link = (p: string) => `${BASE}${p}`;
       <div class="silo-grid">
         {mcos.map((mco) => (
           <a class="silo-card silo-card-link" href={link(`/medicaid/${mco.data.slug}`)}>
+            <div class="silo-card-icon"><Icon name="shield-check" size={28} /></div>
             <div class="silo-card-eyebrow">Kentucky Medicaid</div>
             <h3>{mco.data.shortName}</h3>
             <p>Verify {mco.data.shortName}'s dual-diagnosis coverage and what's covered.</p>
