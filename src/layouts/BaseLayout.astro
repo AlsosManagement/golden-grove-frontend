@@ -96,14 +96,28 @@ const jsonLdArray = Array.isArray(jsonLd) ? jsonLd : jsonLd ? [jsonLd] : [];
          shows the full "Call (xxx) xxx-xxxx" button; the mobile version
          shows just a phone glyph + "Call" text. Both versions visible so
          the call-to-action is always one tap away. */
-      .nav-call-mobile {
-        display: none;
+      /* Single adaptive Call button in the nav.
+         Always visible across every viewport. Phone icon + adaptive text:
+           ≥1200px: "Call (502) 610-4829"     (full phone number)
+           <1200px: "Call"                    (compact, icon supplies context)
+         Padding tightens slightly on phones. Specificity is one class
+         higher than .gg-btn so the cascade can't override display. */
+      a.gg-btn.nav-call {
+        display: inline-flex;
         align-items: center;
-        gap: 6px;
-        padding: 8px 14px !important;
-        font-size: 12px !important;
+        gap: 7px;
+        padding: 8px 18px;
+        font-size: 12px;
         border-radius: 6px;
         flex-shrink: 0;
+      }
+      .nav-call-icon { flex-shrink: 0; }
+      .nav-call-text-full { display: inline; }
+      .nav-call-text-short { display: none; }
+      @media (max-width: 1199px) {
+        .nav-call-text-full { display: none; }
+        .nav-call-text-short { display: inline; }
+        a.gg-btn.nav-call { padding: 8px 14px; }
       }
 
       /* Two SVG wordmark variants for brand consistency at every viewport.
@@ -115,9 +129,6 @@ const jsonLdArray = Array.isArray(jsonLd) ? jsonLd : jsonLd ? [jsonLd] : [];
       @media (max-width: 1199px) {
         .nav-wordmark-svg { display: none !important; }
         .nav-wordmark-compact-svg { display: inline-flex; }
-      }
-      @media (max-width: 768px) {
-        .nav-call-mobile { display: inline-flex; }
       }
 
       /* Site-wide nav, footer, button styles. Previously these lived only inside the

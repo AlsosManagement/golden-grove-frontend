@@ -85,22 +85,27 @@ export function GlobalStyles() {
         .gg-btn-pulse { animation: none; }
       }
 
-      .nav-call-mobile {
-        display: none;
+      a.gg-btn.nav-call {
+        display: inline-flex;
         align-items: center;
-        gap: 6px;
-        padding: 8px 14px !important;
-        font-size: 12px !important;
+        gap: 7px;
+        padding: 8px 18px;
+        font-size: 12px;
         border-radius: 6px;
         flex-shrink: 0;
+      }
+      .nav-call-icon { flex-shrink: 0; }
+      .nav-call-text-full { display: inline; }
+      .nav-call-text-short { display: none; }
+      @media (max-width: 1199px) {
+        .nav-call-text-full { display: none; }
+        .nav-call-text-short { display: inline; }
+        a.gg-btn.nav-call { padding: 8px 14px; }
       }
       .nav-wordmark-compact-svg { display: none; align-items: center; }
       @media (max-width: 1199px) {
         .nav-wordmark-svg { display: none !important; }
         .nav-wordmark-compact-svg { display: inline-flex; }
-      }
-      @media (max-width: 768px) {
-        .nav-call-mobile { display: inline-flex; }
       }
 
       .gg-card {
