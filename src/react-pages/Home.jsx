@@ -1,6 +1,20 @@
 import { Link } from "../lib/site.jsx";
 import { B, SITE, PROGRAMS, EXPECT, REVIEWS } from "../data";
-import { FadeIn, Wordmark } from "../components/shared";
+import { FadeIn, Wordmark, Icon } from "../components/shared";
+
+// Icon mappings keyed by the EXPECT and PROGRAMS titles in src/data.js
+const expectIcons = {
+  "Confidential Assessment": "phone",
+  "Evidence-Based Treatment": "check-circle",
+  "Dual Diagnosis Expertise": "brain",
+  "Recovery Community": "users",
+  "Holistic Wellness": "leaf",
+  "Aftercare Planning": "refresh",
+};
+const programIcons = {
+  "Residential Treatment": "home",
+  "Partial Hospitalization (PHP)": "clock",
+};
 
 export default function Home() {
   return (
@@ -74,6 +88,14 @@ export default function Home() {
           {PROGRAMS.map((p, i) => (
             <FadeIn key={i} delay={i * 0.1}>
               <div className="gg-card" style={{ padding: "32px 28px", height: "100%" }}>
+                <div style={{
+                  width: 48, height: 48, borderRadius: 12,
+                  background: B.butterPale,
+                  display: "flex", alignItems: "center", justifyContent: "center",
+                  marginBottom: 16, color: B.butterscotch,
+                }}>
+                  <Icon name={programIcons[p.title] || "info"} size={26} color={B.butterscotch} />
+                </div>
                 <div className="gg-pill" style={{
                   background: B.butterPale, color: B.butterscotch,
                   border: `1px solid ${B.butterscotch}33`, marginBottom: 16,
@@ -122,11 +144,13 @@ export default function Home() {
               <FadeIn key={i} delay={i * 0.06}>
                 <div className="gg-card" style={{ padding: "24px 22px", height: "100%" }}>
                   <div style={{
-                    width: 36, height: 36, borderRadius: 10,
+                    width: 44, height: 44, borderRadius: 12,
                     background: `linear-gradient(135deg, ${B.coffee}, ${B.butterscotch})`,
                     display: "flex", alignItems: "center", justifyContent: "center",
-                    fontSize: 14, fontWeight: 800, color: B.white, marginBottom: 14,
-                  }}>{String(i + 1).padStart(2, "0")}</div>
+                    color: B.white, marginBottom: 14,
+                  }}>
+                    <Icon name={expectIcons[e.title] || "info"} size={22} color={B.white} />
+                  </div>
                   <h3 style={{ fontSize: 16, fontWeight: 700, color: B.coffee, marginBottom: 8 }}>{e.title}</h3>
                   <p style={{ fontSize: 13, color: B.gray, lineHeight: 1.7 }}>{e.desc}</p>
                 </div>

@@ -1,6 +1,11 @@
 import { Link } from "../lib/site.jsx";
 import { B, SITE, PROGRAMS } from "../data";
-import { FadeIn } from "../components/shared";
+import { FadeIn, Icon } from "../components/shared";
+
+const programIcons = {
+  "Residential Treatment": "home",
+  "Partial Hospitalization (PHP)": "clock",
+};
 
 export default function Programs() {
   return (
@@ -27,6 +32,14 @@ export default function Programs() {
           {PROGRAMS.map((p, i) => (
             <FadeIn key={i} delay={i * 0.1}>
               <div className="gg-card" style={{ padding: "32px 28px", height: "100%" }}>
+                <div style={{
+                  width: 48, height: 48, borderRadius: 12,
+                  background: B.butterPale,
+                  display: "flex", alignItems: "center", justifyContent: "center",
+                  marginBottom: 16,
+                }}>
+                  <Icon name={programIcons[p.title] || "info"} size={26} color={B.butterscotch} />
+                </div>
                 <div className="gg-pill" style={{
                   background: B.butterPale, color: B.butterscotch,
                   border: `1px solid ${B.butterscotch}33`, marginBottom: 16,
@@ -70,6 +83,9 @@ export default function Programs() {
           <div className="program-grid" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(400px, 100%), 1fr))", gap: 18 }}>
             <FadeIn delay={0}>
               <div className="gg-card" style={{ padding: "32px 28px", height: "100%" }}>
+                <div style={{ width: 48, height: 48, borderRadius: 12, background: B.butterPale, display: "flex", alignItems: "center", justifyContent: "center", marginBottom: 16 }}>
+                  <Icon name="brain" size={26} color={B.butterscotch} />
+                </div>
                 <div className="gg-pill" style={{ background: B.butterPale, color: B.butterscotch, border: `1px solid ${B.butterscotch}33`, marginBottom: 16 }}>Integrated Care</div>
                 <h3 style={{ fontSize: 22, fontWeight: 700, color: B.coffee, marginBottom: 12 }}>Co-Occurring Disorders</h3>
                 <p style={{ fontSize: 14, color: B.gray, lineHeight: 1.7, marginBottom: 16 }}>
@@ -82,6 +98,9 @@ export default function Programs() {
             </FadeIn>
             <FadeIn delay={0.1}>
               <div className="gg-card" style={{ padding: "32px 28px", height: "100%" }}>
+                <div style={{ width: 48, height: 48, borderRadius: 12, background: B.butterPale, display: "flex", alignItems: "center", justifyContent: "center", marginBottom: 16 }}>
+                  <Icon name="pill" size={26} color={B.butterscotch} />
+                </div>
                 <div className="gg-pill" style={{ background: B.butterPale, color: B.butterscotch, border: `1px solid ${B.butterscotch}33`, marginBottom: 16 }}>Evidence-Based</div>
                 <h3 style={{ fontSize: 22, fontWeight: 700, color: B.coffee, marginBottom: 12 }}>Medication-Assisted Treatment</h3>
                 <p style={{ fontSize: 14, color: B.gray, lineHeight: 1.7, marginBottom: 16 }}>

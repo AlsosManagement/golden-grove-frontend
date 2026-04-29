@@ -1,6 +1,13 @@
 import { Link } from "../lib/site.jsx";
 import { B, SITE, RESOURCES } from "../data";
-import { FadeIn } from "../components/shared";
+import { FadeIn, Icon } from "../components/shared";
+
+const resourceIcons = {
+  "Alcohol Addiction": "heart",
+  "Opioid & Heroin Addiction": "stethoscope",
+  "Drug Rehab in Louisville": "map-pin",
+  "All Resources": "file-text",
+};
 
 export default function Resources() {
   return (
@@ -36,6 +43,12 @@ export default function Resources() {
           {RESOURCES.map((r, i) => (
             <FadeIn key={i} delay={i * 0.08}>
               <div className="gg-card" style={{ padding: "24px 22px", cursor: "pointer", height: "100%" }}>
+                <div style={{
+                  width: 40, height: 40, borderRadius: 10, background: B.butterPale,
+                  display: "flex", alignItems: "center", justifyContent: "center", marginBottom: 12,
+                }}>
+                  <Icon name={resourceIcons[r.title] || "info"} size={20} color={B.butterscotch} />
+                </div>
                 <h4 style={{ fontSize: 15, fontWeight: 700, color: B.coffee, marginBottom: 8 }}>{r.title}</h4>
                 <p style={{ fontSize: 13, color: B.gray, lineHeight: 1.6, marginBottom: 12 }}>{r.desc}</p>
                 <span style={{ fontSize: 12, fontWeight: 600, color: B.butterscotch }}>Read more &#8594;</span>

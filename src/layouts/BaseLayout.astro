@@ -110,11 +110,12 @@ const jsonLdArray = Array.isArray(jsonLd) ? jsonLd : jsonLd ? [jsonLd] : [];
         font-size: 12px;
         border-radius: 6px;
         flex-shrink: 0;
+        white-space: nowrap;
       }
       .nav-call-icon { flex-shrink: 0; }
       .nav-call-text-full { display: inline; }
       .nav-call-text-short { display: none; }
-      @media (max-width: 1199px) {
+      @media (max-width: 1279px) {
         .nav-call-text-full { display: none; }
         .nav-call-text-short { display: inline; }
         a.gg-btn.nav-call { padding: 8px 14px; }

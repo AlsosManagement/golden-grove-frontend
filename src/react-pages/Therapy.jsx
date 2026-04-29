@@ -1,6 +1,13 @@
 import { Link } from "../lib/site.jsx";
 import { B, SITE, THERAPIES } from "../data";
-import { FadeIn } from "../components/shared";
+import { FadeIn, Icon } from "../components/shared";
+
+const therapyCategoryIcons = {
+  "Psychotherapy": "message-circle",
+  "Somatic & Trauma": "heart",
+  "Holistic Wellness": "leaf",
+  "Recovery Models": "users",
+};
 
 export default function Therapy() {
   return (
@@ -37,6 +44,12 @@ export default function Therapy() {
           {THERAPIES.map((t, i) => (
             <FadeIn key={i} delay={i * 0.08}>
               <div className="gg-card" style={{ padding: "24px 22px", height: "100%" }}>
+                <div style={{
+                  width: 44, height: 44, borderRadius: 12, background: B.butterPale,
+                  display: "flex", alignItems: "center", justifyContent: "center", marginBottom: 14,
+                }}>
+                  <Icon name={therapyCategoryIcons[t.cat] || "info"} size={22} color={B.butterscotch} />
+                </div>
                 <h3 style={{ fontSize: 14, fontWeight: 700, color: B.butterscotch, letterSpacing: "0.04em",
                   textTransform: "uppercase", marginBottom: 16 }}>{t.cat}</h3>
                 {t.items.map((item, j) => (
