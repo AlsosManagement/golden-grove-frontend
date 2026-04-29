@@ -100,10 +100,12 @@ export function GlobalStyles() {
         color: ${B.coffee};
         white-space: nowrap;
       }
-      @media (max-width: 768px) {
-        .nav-call-mobile { display: inline-flex; }
+      @media (max-width: 1199px) {
         .nav-wordmark-svg { display: none !important; }
         .nav-wordmark-text { display: inline-block; }
+      }
+      @media (max-width: 768px) {
+        .nav-call-mobile { display: inline-flex; }
       }
 
       .gg-card {
