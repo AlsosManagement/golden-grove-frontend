@@ -37,8 +37,9 @@ export default function Nav() {
         transition: "all 0.3s",
         display: "flex", alignItems: "center", justifyContent: "space-between",
       }}>
-        <a href={href("/")} className="nav-wordmark" style={{ display: "flex", alignItems: "center", textDecoration: "none" }}>
-          <Wordmark height={44} variant="color" />
+        <a href={href("/")} className="nav-wordmark" style={{ display: "flex", alignItems: "center", textDecoration: "none", flexShrink: 0 }}>
+          <span className="nav-wordmark-svg"><Wordmark height={44} variant="color" /></span>
+          <span className="nav-wordmark-text">Golden Grove</span>
         </a>
 
         <div className="desktop-only" style={{ display: "flex", alignItems: "center", gap: 2 }}>

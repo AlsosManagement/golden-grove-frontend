@@ -89,9 +89,21 @@ export function GlobalStyles() {
         padding: 8px 14px !important;
         font-size: 12px !important;
         border-radius: 6px;
+        flex-shrink: 0;
+      }
+      .nav-wordmark-text {
+        display: none;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 800;
+        font-size: 17px;
+        letter-spacing: -0.01em;
+        color: ${B.coffee};
+        white-space: nowrap;
       }
       @media (max-width: 768px) {
         .nav-call-mobile { display: inline-flex; }
+        .nav-wordmark-svg { display: none !important; }
+        .nav-wordmark-text { display: inline-block; }
       }
 
       .gg-card {
