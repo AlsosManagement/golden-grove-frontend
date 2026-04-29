@@ -7,6 +7,7 @@ import Cta from "../../components/Cta.astro";
 import SiloStyles from "../../components/SiloStyles.astro";
 import InsuranceDisclaimer from "../../components/InsuranceDisclaimer.astro";
 
+import Icon from "../../components/Icon.astro";
 const facility = (await getEntry("facility", "golden-grove-recovery"))!.data;
 const substances = (await getCollection("substances")).sort((a, b) => a.data.name.localeCompare(b.data.name));
 
@@ -30,6 +31,13 @@ const categoryHrefs: Record<string, string | null> = {
   opioids: "/substance-use/opioids",
   stimulants: null,
   benzodiazepines: "/substance-use/benzodiazepines",
+};
+
+const categoryIcons: Record<string, "heart" | "stethoscope" | "info" | "pill"> = {
+  alcohol: "heart",
+  opioids: "stethoscope",
+  stimulants: "info",
+  benzodiazepines: "pill",
 };
 
 const title = `Substance Use Disorders We Treat in ${facility.city}, ${facility.stateCode} | Golden Grove Recovery`;
@@ -81,6 +89,7 @@ const link = (p: string) => `${BASE}${p}`;
           <div class="silo-grid">
             {items.map((s) => (
               <a class="silo-card silo-card-link" href={link(`/substance-use/${s.data.category}/${s.data.slug}`)}>
+                <div class="silo-card-icon"><Icon name={categoryIcons[s.data.category] ?? "info"} size={28} /></div>
                 <div class="silo-card-eyebrow">Treatment available</div>
                 <h3>{s.data.name}</h3>
                 {s.data.synonyms.length > 0 && (

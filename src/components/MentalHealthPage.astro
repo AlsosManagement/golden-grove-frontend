@@ -4,6 +4,7 @@ import SiloHero from "./SiloHero.astro";
 import Breadcrumbs, { type Crumb } from "./Breadcrumbs.astro";
 import Cta from "./Cta.astro";
 import InsuranceDisclaimer from "./InsuranceDisclaimer.astro";
+import Icon from "./Icon.astro";
 
 export interface Props {
   slug: string;
@@ -88,6 +89,7 @@ const link = (p: string) => `${BASE}${p}`;
       <div class="silo-grid">
         {others.map((o) => (
           <a class="silo-card silo-card-link" href={link(`/mental-health/${o.data.slug}`)}>
+            <div class="silo-card-icon"><Icon name="brain" size={28} /></div>
             <div class="silo-card-eyebrow">Dual Diagnosis</div>
             <h3>{o.data.name}</h3>
             <span class="silo-card-arrow">Read more →</span>

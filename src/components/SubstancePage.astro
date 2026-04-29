@@ -4,6 +4,7 @@ import SiloHero from "./SiloHero.astro";
 import Breadcrumbs, { type Crumb } from "./Breadcrumbs.astro";
 import Cta from "./Cta.astro";
 import InsuranceDisclaimer from "./InsuranceDisclaimer.astro";
+import Icon from "./Icon.astro";
 
 export interface Props {
   substanceSlug: string;
@@ -34,18 +35,21 @@ const treatmentOfferings = [
   {
     eyebrow: "ASAM 3.7",
     title: "Medical Detox",
+    icon: "stethoscope" as const,
     detail: "Medically monitored withdrawal management with 24/7 clinical monitoring and symptom-based medication. Talk to our admissions team about how detox fits your situation.",
     href: "/levels-of-care/medical-detox",
   },
   {
     eyebrow: "ASAM 3.5",
     title: "Residential Treatment",
+    icon: "home" as const,
     detail: `21-28 days of structured 24/7 care${isOpioid ? ", with MAT continuing throughout" : ""}. Kentucky's 1115 waiver lets Medicaid pay for residential at full-size facilities.`,
     href: "/levels-of-care/residential-inpatient",
   },
   {
     eyebrow: "ASAM 2.5 / 2.1",
     title: "PHP & IOP Step-Down",
+    icon: "clock" as const,
     detail: "Daytime or evening intensive programming after residential. Lets you return to family and work while staying clinically connected.",
     href: "/levels-of-care/partial-hospitalization-php",
   },
@@ -54,6 +58,7 @@ const treatmentOfferings = [
         {
           eyebrow: "Standard of Care",
           title: "MAT — Suboxone, Vivitrol, Methadone",
+          icon: "pill" as const,
           detail: "Medication-Assisted Treatment cuts overdose mortality by more than half. We start MAT in detox and continue through outpatient.",
           href: "/substance-use/opioids/mat",
         },
@@ -64,6 +69,7 @@ const treatmentOfferings = [
         {
           eyebrow: "Standard of Care",
           title: "MAT — Naltrexone, Vivitrol, Acamprosate",
+          icon: "pill" as const,
           detail: "FDA-approved medications for alcohol use disorder are typically covered by Kentucky Medicaid plans and reduce relapse risk meaningfully when paired with therapy.",
           href: "/medicaid/medicaid-mat-coverage",
         },
@@ -72,6 +78,7 @@ const treatmentOfferings = [
   {
     eyebrow: "Continuing Care",
     title: "Outpatient & Aftercare",
+    icon: "refresh" as const,
     detail: "Ongoing therapy, MAT management, and relapse-prevention support — covered by Kentucky Medicaid plans subject to medical necessity.",
     href: "/levels-of-care/outpatient",
   },
@@ -96,6 +103,7 @@ const treatmentOfferings = [
       <div class="silo-grid">
         {mcos.map((m) => (
           <a class="silo-card silo-card-link" href={link(`/medicaid/${m.data.slug}`)}>
+            <div class="silo-card-icon"><Icon name="shield-check" size={28} /></div>
             <div class="silo-card-eyebrow">Kentucky Medicaid plan</div>
             <h3>{m.data.shortName}</h3>
             <p>{m.data.shortName} covers residential, PHP, IOP, outpatient, and medication-assisted treatment for {s.name.toLowerCase()}.</p>
@@ -121,6 +129,7 @@ const treatmentOfferings = [
       <div class="silo-grid">
         {treatmentOfferings.map((o) => (
           <a class="silo-card silo-card-link" href={link(o.href)}>
+            <div class="silo-card-icon"><Icon name={o.icon} size={28} /></div>
             <div class="silo-card-eyebrow">{o.eyebrow}</div>
             <h3>{o.title}</h3>
             <p>{o.detail}</p>

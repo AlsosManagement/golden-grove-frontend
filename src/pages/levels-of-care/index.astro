@@ -7,6 +7,7 @@ import Cta from "../../components/Cta.astro";
 import SiloStyles from "../../components/SiloStyles.astro";
 import InsuranceDisclaimer from "../../components/InsuranceDisclaimer.astro";
 
+import Icon from "../../components/Icon.astro";
 const facility = (await getEntry("facility", "golden-grove-recovery"))!.data;
 const levels = (await getCollection("levelsOfCare"))
   .sort((a, b) => Number(b.data.asamCode) - Number(a.data.asamCode));

@@ -7,6 +7,7 @@ import Cta from "../../components/Cta.astro";
 import SiloStyles from "../../components/SiloStyles.astro";
 import InsuranceDisclaimer from "../../components/InsuranceDisclaimer.astro";
 
+import Icon from "../../components/Icon.astro";
 const facility = (await getEntry("facility", "golden-grove-recovery"))!.data;
 const mcos = (await getCollection("mcos")).sort((a, b) => a.data.name.localeCompare(b.data.name));
 
@@ -52,6 +53,7 @@ const link = (p: string) => `${BASE}${p}`;
         <div class="silo-grid">
           {mcos.map((m) => (
             <a class="silo-card silo-card-link" href={link(`/medicaid/${m.data.slug}`)}>
+              <div class="silo-card-icon"><Icon name="shield-check" size={28} /></div>
               <div class="silo-card-eyebrow">Kentucky Medicaid</div>
               <h3>{m.data.shortName}</h3>
               <span class="silo-card-arrow">View {m.data.shortName} coverage →</span>

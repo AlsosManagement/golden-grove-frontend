@@ -4,6 +4,7 @@ import SiloHero from "./SiloHero.astro";
 import Breadcrumbs, { type Crumb } from "./Breadcrumbs.astro";
 import Cta from "./Cta.astro";
 import InsuranceDisclaimer from "./InsuranceDisclaimer.astro";
+import Icon from "./Icon.astro";
 
 export interface Props {
   slug: string;
@@ -22,6 +23,14 @@ const allLevels = (await getCollection("levelsOfCare"))
 
 const BASE = import.meta.env.BASE_URL.replace(/\/$/, "");
 const link = (p: string) => `${BASE}${p}`;
+
+const iconBySlug: Record<string, "stethoscope" | "home" | "clock" | "refresh" | "calendar" | "info"> = {
+  "medical-detox": "stethoscope",
+  "residential-inpatient": "home",
+  "partial-hospitalization-php": "clock",
+  "intensive-outpatient-iop": "calendar",
+  "outpatient": "refresh",
+};
 ---
 
 <div class="silo-body">
@@ -43,6 +52,7 @@ const link = (p: string) => `${BASE}${p}`;
       <div class="silo-grid">
         {mcos.map((m) => (
           <a class="silo-card silo-card-link" href={link(`/medicaid/${m.data.slug}`)}>
+            <div class="silo-card-icon"><Icon name="shield-check" size={28} /></div>
             <div class="silo-card-eyebrow">Kentucky Medicaid plan</div>
             <h3>{m.data.shortName}</h3>
             <p>See {m.data.shortName}'s coverage detail and what's covered.</p>
@@ -87,6 +97,7 @@ const link = (p: string) => `${BASE}${p}`;
       <div class="silo-grid">
         {allLevels.map((other) => (
           <a class="silo-card silo-card-link" href={link(`/levels-of-care/${other.data.slug}`)}>
+            <div class="silo-card-icon"><Icon name={iconBySlug[other.data.slug] ?? "info"} size={28} /></div>
             <div class="silo-card-eyebrow">ASAM {other.data.asamCode}</div>
             <h3>{other.data.shortName}</h3>
             <p>{other.data.typicalDuration}{other.data.hoursPerWeek ? ` · ${other.data.hoursPerWeek}` : ""}</p>

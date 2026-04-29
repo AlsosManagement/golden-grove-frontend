@@ -6,6 +6,7 @@ import Breadcrumbs from "../../components/Breadcrumbs.astro";
 import Cta from "../../components/Cta.astro";
 import SiloStyles from "../../components/SiloStyles.astro";
 import InsuranceDisclaimer from "../../components/InsuranceDisclaimer.astro";
+import Icon from "../../components/Icon.astro";
 
 const facility = (await getEntry("facility", "golden-grove-recovery"))!.data;
 const mcos = (await getCollection("mcos")).sort((a, b) => a.data.name.localeCompare(b.data.name));
@@ -54,6 +55,7 @@ const link = (p: string) => `${BASE}${p}`;
         <div class="silo-grid">
           {mcos.map((mco) => (
             <a class="silo-card silo-card-link" href={link(`/medicaid/${mco.data.slug}`)}>
+              <div class="silo-card-icon"><Icon name="shield-check" size={28} /></div>
               <div class="silo-card-eyebrow">Kentucky Medicaid</div>
               <h3>{mco.data.name}</h3>
               <p>{mco.data.description.slice(0, 160)}{mco.data.description.length > 160 ? "…" : ""}</p>
@@ -78,36 +80,42 @@ const link = (p: string) => `${BASE}${p}`;
 
         <div class="silo-grid">
           <a class="silo-card silo-card-link" href={link("/medicaid/medicaid-detox-coverage")}>
+            <div class="silo-card-icon"><Icon name="stethoscope" size={28} /></div>
             <div class="silo-card-eyebrow">ASAM 3.7 / 4</div>
             <h3>Medical detox</h3>
             <p>Life-threatening alcohol or benzo withdrawal handled in supervised settings.</p>
             <span class="silo-card-arrow">Detox coverage →</span>
           </a>
           <a class="silo-card silo-card-link" href={link("/medicaid/medicaid-residential-coverage")}>
+            <div class="silo-card-icon"><Icon name="home" size={28} /></div>
             <div class="silo-card-eyebrow">ASAM 3.1 / 3.3 / 3.5</div>
             <h3>Residential / inpatient</h3>
             <p>Kentucky's 1115 waiver allows full Medicaid coverage of residential SUD treatment.</p>
             <span class="silo-card-arrow">Residential coverage →</span>
           </a>
           <a class="silo-card silo-card-link" href={link("/medicaid/medicaid-php-iop-coverage")}>
+            <div class="silo-card-icon"><Icon name="clock" size={28} /></div>
             <div class="silo-card-eyebrow">ASAM 2.5 / 2.1</div>
             <h3>PHP &amp; IOP</h3>
             <p>Structured step-down or step-up care while you live at home.</p>
             <span class="silo-card-arrow">PHP / IOP coverage →</span>
           </a>
           <a class="silo-card silo-card-link" href={link("/medicaid/medicaid-mat-coverage")}>
+            <div class="silo-card-icon"><Icon name="pill" size={28} /></div>
             <div class="silo-card-eyebrow">Standard of Care</div>
             <h3>Medication-Assisted Treatment</h3>
             <p>Suboxone, Subutex, methadone, Vivitrol, and naltrexone — covered by every plan.</p>
             <span class="silo-card-arrow">MAT coverage →</span>
           </a>
           <a class="silo-card silo-card-link" href={link("/medicaid/medicaid-outpatient-coverage")}>
+            <div class="silo-card-icon"><Icon name="refresh" size={28} /></div>
             <div class="silo-card-eyebrow">ASAM 1</div>
             <h3>Outpatient SUD</h3>
             <p>Therapy, group counseling, MAT management, and continuing care — no visit caps.</p>
             <span class="silo-card-arrow">Outpatient coverage →</span>
           </a>
           <a class="silo-card silo-card-link" href={link("/medicaid/kentucky-medicaid-coverage")}>
+            <div class="silo-card-icon"><Icon name="info" size={28} /></div>
             <div class="silo-card-eyebrow">Pillar Overview</div>
             <h3>Kentucky Medicaid &amp; SUD</h3>
             <p>Background on Medicaid managed care, the 1115 waiver, and integrated dual diagnosis.</p>

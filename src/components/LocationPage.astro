@@ -4,6 +4,7 @@ import SiloHero from "./SiloHero.astro";
 import Breadcrumbs, { type Crumb } from "./Breadcrumbs.astro";
 import Cta from "./Cta.astro";
 import InsuranceDisclaimer from "./InsuranceDisclaimer.astro";
+import Icon from "./Icon.astro";
 
 export interface Props {
   slug: string;
@@ -59,33 +60,39 @@ const link = (p: string) => `${BASE}${p}`;
       <h2>What we treat for {loc.name} residents</h2>
       <div class="silo-grid">
         <a class="silo-card silo-card-link" href={link("/substance-use/alcohol")}>
+          <div class="silo-card-icon"><Icon name="heart" size={28} /></div>
           <div class="silo-card-eyebrow">Substance Use Treatment</div>
           <h3>Alcohol Use Disorder</h3>
           <span class="silo-card-arrow">Read more →</span>
         </a>
         <a class="silo-card silo-card-link" href={link("/substance-use/opioids")}>
+          <div class="silo-card-icon"><Icon name="stethoscope" size={28} /></div>
           <div class="silo-card-eyebrow">Substance Use Treatment</div>
           <h3>Opioid Use Disorder</h3>
           <p>Including <a href={link("/substance-use/opioids/fentanyl")}>fentanyl</a> and <a href={link("/substance-use/opioids/heroin")}>heroin</a>.</p>
           <span class="silo-card-arrow">Read more →</span>
         </a>
         <a class="silo-card silo-card-link" href={link("/substance-use/stimulants/meth-methamphetamine")}>
+          <div class="silo-card-icon"><Icon name="info" size={28} /></div>
           <div class="silo-card-eyebrow">Substance Use Treatment</div>
           <h3>Methamphetamine</h3>
           <span class="silo-card-arrow">Read more →</span>
         </a>
         <a class="silo-card silo-card-link" href={link("/substance-use/benzodiazepines")}>
+          <div class="silo-card-icon"><Icon name="pill" size={28} /></div>
           <div class="silo-card-eyebrow">Substance Use Treatment</div>
           <h3>Benzodiazepines</h3>
           <span class="silo-card-arrow">Read more →</span>
         </a>
         <a class="silo-card silo-card-link" href={link("/mental-health")}>
+          <div class="silo-card-icon"><Icon name="brain" size={28} /></div>
           <div class="silo-card-eyebrow">Dual Diagnosis</div>
           <h3>Co-occurring mental health</h3>
           <p>Depression, anxiety, PTSD, bipolar, and more — treated alongside SUD.</p>
           <span class="silo-card-arrow">Read more →</span>
         </a>
         <a class="silo-card silo-card-link" href={link("/substance-use/opioids/mat")}>
+          <div class="silo-card-icon"><Icon name="pill" size={28} /></div>
           <div class="silo-card-eyebrow">MAT</div>
           <h3>Medication-Assisted Treatment</h3>
           <p>Suboxone, methadone, Vivitrol, and naltrexone for OUD and AUD.</p>
