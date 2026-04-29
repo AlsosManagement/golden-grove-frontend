@@ -31,11 +31,14 @@ export function FadeIn({ children, delay = 0, style = {} }) {
 }
 
 // ─── WORDMARK SVG ────────────────────────────────────────────────────────────
-export function Wordmark({ height = 40, variant = "color" }) {
+// `compact` crops the viewBox to "Golden Grove" only (drops "Recovery") so
+// the wordmark fits in narrow viewports while staying brand-consistent.
+export function Wordmark({ height = 40, variant = "color", compact = false }) {
   const c1 = variant === "white" ? "#FFFFFF" : "#462001";
   const c2 = variant === "white" ? "rgba(255,255,255,0.7)" : "#c79a56";
+  const viewBox = compact ? "100 185 490 50" : "100 185 790 50";
   return (
-    <svg height={height} viewBox="100 185 790 50" xmlns="http://www.w3.org/2000/svg" style={{ display: "block" }}>
+    <svg height={height} viewBox={viewBox} xmlns="http://www.w3.org/2000/svg" style={{ display: "block" }}>
       <path fill={c1} d="M112.9,210.2c0-2.8.5-5.3,1.5-7.7s2.4-4.5,4.2-6.2c1.8-1.7,3.9-3.1,6.4-4.1s5.1-1.5,8-1.5,3.2.1,4.6.4c1.4.3,2.6.6,3.7,1,1.1.4,2,.8,2.8,1.1.8.4,1.4.7,1.8,1,.9.7,1.1,1.5.4,2.4l-.8,1.1c-.6.9-1.5,1-2.6.5-.4-.2-1-.5-1.6-.9-.6-.3-1.3-.6-2.1-.9-.8-.3-1.7-.5-2.7-.7s-2.1-.3-3.3-.3c-2.3,0-4.3.4-6.1,1.1-1.8.8-3.3,1.8-4.6,3.1-1.3,1.3-2.2,2.8-2.9,4.6-.7,1.8-1,3.6-1,5.7s.4,4.1,1.1,5.9c.7,1.8,1.8,3.4,3,4.7,1.3,1.3,2.8,2.3,4.5,3s3.6,1.1,5.7,1.1,3.4-.2,4.8-.7c1.4-.5,2.5-1,3.5-1.6,1.1-.7,2.1-1.5,2.9-2.4v-5.3h-4.6c-1.2,0-1.8-.6-1.8-1.8v-1.1c0-1.2.6-1.8,1.8-1.8h7.8c1.2,0,1.8.6,1.8,1.8v15.4c0,1.2-.6,1.8-1.8,1.8h-1.1c-1.2,0-1.8-.5-1.8-1.5v-2.6h-.1c-.8.9-1.8,1.7-3.1,2.3-1,.6-2.3,1.1-3.8,1.6s-3.3.7-5.3.7-5.2-.5-7.5-1.4c-2.3-1-4.4-2.3-6.1-4s-3.1-3.7-4.2-6.1c-1-2.4-1.5-5-1.5-7.8h.1Z"/>
       <path fill={c1} d="M157.5,209.8c0-2.7.5-5.2,1.5-7.5s2.4-4.4,4.2-6.1,3.9-3.1,6.4-4c2.5-1,5.2-1.5,8.1-1.5s5.6.5,8.1,1.5,4.6,2.3,6.4,4c1.8,1.7,3.2,3.7,4.2,6.1s1.5,4.9,1.5,7.5-.5,5.3-1.5,7.7-2.4,4.5-4.2,6.2c-1.8,1.8-3.9,3.2-6.4,4.2s-5.2,1.5-8.1,1.5-5.6-.5-8.1-1.5-4.6-2.4-6.4-4.2c-1.8-1.8-3.2-3.9-4.2-6.2s-1.5-5-1.5-7.7ZM163.2,209.8c0,2.1.4,4,1.1,5.8.7,1.8,1.7,3.4,3,4.7s2.8,2.4,4.6,3.1c1.8.8,3.7,1.1,5.8,1.1s4-.4,5.8-1.1c1.8-.8,3.3-1.8,4.6-3.1s2.3-2.9,3-4.7,1.1-3.8,1.1-5.8-.4-3.9-1.1-5.7c-.7-1.8-1.7-3.3-3-4.5s-2.8-2.3-4.6-3-3.7-1.1-5.8-1.1-4,.4-5.8,1.1c-1.8.7-3.3,1.7-4.6,3s-2.3,2.8-3,4.5c-.7,1.8-1.1,3.6-1.1,5.7Z"/>
       <path fill={c1} d="M208.3,193c0-1.2.6-1.8,1.8-1.8h1.8c1.2,0,1.8.6,1.8,1.8v31.2h15.9c1.2,0,1.8.6,1.8,1.8v1.1c0,1.2-.6,1.8-1.8,1.8h-19.5c-1.2,0-1.8-.6-1.8-1.8v-34h0Z"/>
@@ -91,18 +94,10 @@ export function GlobalStyles() {
         border-radius: 6px;
         flex-shrink: 0;
       }
-      .nav-wordmark-text {
-        display: none;
-        font-family: 'Montserrat', sans-serif;
-        font-weight: 800;
-        font-size: 17px;
-        letter-spacing: -0.01em;
-        color: ${B.coffee};
-        white-space: nowrap;
-      }
+      .nav-wordmark-compact-svg { display: none; align-items: center; }
       @media (max-width: 1199px) {
         .nav-wordmark-svg { display: none !important; }
-        .nav-wordmark-text { display: inline-block; }
+        .nav-wordmark-compact-svg { display: inline-flex; }
       }
       @media (max-width: 768px) {
         .nav-call-mobile { display: inline-flex; }

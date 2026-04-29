@@ -106,23 +106,15 @@ const jsonLdArray = Array.isArray(jsonLd) ? jsonLd : jsonLd ? [jsonLd] : [];
         flex-shrink: 0;
       }
 
-      /* Compact text wordmark used on phones AND narrower desktops/tablets.
-         The SVG wordmark has a 790:50 aspect ratio (~440px wide at any visible
-         height), which overflows phone viewports AND narrow desktops where the
-         9 nav links + call button + wordmark together don't fit. The full SVG
-         only shows on wide desktops (≥1200px). */
-      .nav-wordmark-text {
-        display: none;
-        font-family: 'Montserrat', sans-serif;
-        font-weight: 800;
-        font-size: 17px;
-        letter-spacing: -0.01em;
-        color: #461F01;
-        white-space: nowrap;
-      }
+      /* Two SVG wordmark variants for brand consistency at every viewport.
+         Full ("Golden Grove Recovery") is ~440px wide at 28px height — only
+         fits on wide desktops. Compact ("Golden Grove") drops the "Recovery"
+         portion via a tighter viewBox; renders ~140px wide at 26px height
+         and fits comfortably on phones + narrow desktops. */
+      .nav-wordmark-compact-svg { display: none; align-items: center; }
       @media (max-width: 1199px) {
         .nav-wordmark-svg { display: none !important; }
-        .nav-wordmark-text { display: inline-block; }
+        .nav-wordmark-compact-svg { display: inline-flex; }
       }
       @media (max-width: 768px) {
         .nav-call-mobile { display: inline-flex; }
