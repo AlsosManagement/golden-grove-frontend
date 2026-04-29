@@ -62,7 +62,7 @@ export const PROGRAMS = [
 ];
 
 export const EXPECT = [
-  { title: "Comprehensive Assessment", desc: "Thorough evaluation of medical history, mental health, substance use patterns, and life circumstances to create a personalized treatment plan." },
+  { title: "Confidential Assessment", desc: "A focused conversation with our admissions team to understand your situation, current substance use, and goals — designed to move quickly so you can get to the next step without a marathon evaluation up front." },
   { title: "Evidence-Based Treatment", desc: "Proven approaches including CBT, DBT, and trauma-informed care grounded in the latest clinical research and best practices." },
   { title: "Dual Diagnosis Expertise", desc: "Integrated treatment for co-occurring addiction and mental health conditions simultaneously for better long-term outcomes." },
   { title: "Recovery Community", desc: "Connect with others on similar paths through group therapy, shared activities, and a supportive environment." },
