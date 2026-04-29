@@ -63,7 +63,7 @@ export default function Programs() {
           <FadeIn>
             <div className="gg-section-label" style={{ marginBottom: 8 }}>Specialized Care</div>
             <h2 style={{ fontSize: 28, fontWeight: 800, color: B.coffee, letterSpacing: "-0.02em", marginBottom: 40 }}>
-              Specialized Treatment Tracks
+              Specialized Care
             </h2>
           </FadeIn>
 
