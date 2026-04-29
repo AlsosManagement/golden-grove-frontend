@@ -69,6 +69,31 @@ export function GlobalStyles() {
       ::-webkit-scrollbar-track { background: ${B.dust}; }
       ::-webkit-scrollbar-thumb { background: ${B.butterscotch}; border-radius: 3px; }
 
+      /* Pulsing CTA — GPU-accelerated. Disabled for prefers-reduced-motion. */
+      @keyframes gg-cta-pulse {
+        0%, 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(242, 209, 125, 0.55); }
+        50%      { transform: scale(1.035); box-shadow: 0 0 0 14px rgba(242, 209, 125, 0); }
+      }
+      .gg-btn-pulse {
+        animation: gg-cta-pulse 2.4s ease-in-out infinite;
+        will-change: transform, box-shadow;
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .gg-btn-pulse { animation: none; }
+      }
+
+      .nav-call-mobile {
+        display: none;
+        align-items: center;
+        gap: 6px;
+        padding: 8px 14px !important;
+        font-size: 12px !important;
+        border-radius: 6px;
+      }
+      @media (max-width: 768px) {
+        .nav-call-mobile { display: inline-flex; }
+      }
+
       .gg-card {
         background: ${B.white};
         border: 1px solid ${B.dust};

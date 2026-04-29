@@ -28,7 +28,7 @@ export default function Home() {
             the clinical expertise and human understanding you deserve.
           </p>
           <div className="hero-ctas" style={{ display: "flex", gap: 14, justifyContent: "center", flexWrap: "wrap" }}>
-            <a href={`tel:${SITE.phoneTel}`} className="gg-btn gg-btn-light">Call {SITE.phone}</a>
+            <a href={`tel:${SITE.phoneTel}`} className="gg-btn gg-btn-light gg-btn-pulse">Call {SITE.phone}</a>
             <Link to="/contact" className="gg-btn gg-btn-secondary">Start Your Assessment</Link>
           </div>
         </FadeIn>

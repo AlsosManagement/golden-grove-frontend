@@ -78,6 +78,36 @@ const jsonLdArray = Array.isArray(jsonLd) ? jsonLd : jsonLd ? [jsonLd] : [];
       ::-webkit-scrollbar-track { background: #EFE2C8; }
       ::-webkit-scrollbar-thumb { background: #8C6934; border-radius: 3px; }
 
+      /* Pulsing CTA — GPU-accelerated, no layout cost. Disabled for users with
+         reduced-motion preference. */
+      @keyframes gg-cta-pulse {
+        0%, 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(242, 209, 125, 0.55); }
+        50%      { transform: scale(1.035); box-shadow: 0 0 0 14px rgba(242, 209, 125, 0); }
+      }
+      .gg-btn-pulse {
+        animation: gg-cta-pulse 2.4s ease-in-out infinite;
+        will-change: transform, box-shadow;
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .gg-btn-pulse { animation: none; }
+      }
+
+      /* Compact phone-icon CTA in the fixed nav on mobile. The desktop nav
+         shows the full "Call (xxx) xxx-xxxx" button; the mobile version
+         shows just a phone glyph + "Call" text. Both versions visible so
+         the call-to-action is always one tap away. */
+      .nav-call-mobile {
+        display: none;
+        align-items: center;
+        gap: 6px;
+        padding: 8px 14px !important;
+        font-size: 12px !important;
+        border-radius: 6px;
+      }
+      @media (max-width: 768px) {
+        .nav-call-mobile { display: inline-flex; }
+      }
+
       /* Site-wide nav, footer, button styles. Previously these lived only inside the
          React <GlobalStyles> component (src/components/shared.jsx), which is rendered
          only on the original 12 React pages. On Astro silo pages, the Nav React island
