@@ -248,6 +248,50 @@ export function GlobalStyles() {
       .nav-wordmark svg { height: 44px; transition: height 0.2s; }
       .hamburger { display: none; }
 
+      .nav-item-with-children { position: relative; }
+      .nav-link-button {
+        display: inline-flex;
+        align-items: center;
+        background: none;
+        border: none;
+        cursor: pointer;
+        font-family: inherit;
+      }
+      .nav-dropdown {
+        position: absolute;
+        top: calc(100% + 4px);
+        left: 0;
+        min-width: 240px;
+        background: ${B.white};
+        border: 1px solid ${B.dust};
+        border-radius: 10px;
+        padding: 6px;
+        box-shadow: 0 12px 32px rgba(70, 31, 1, 0.1);
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-4px);
+        transition: opacity 0.15s, transform 0.15s, visibility 0s 0.15s;
+        z-index: 1001;
+      }
+      .nav-item-with-children.is-open .nav-dropdown {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+        transition: opacity 0.15s, transform 0.15s, visibility 0s;
+      }
+      .nav-dropdown-link {
+        display: block;
+        padding: 9px 14px;
+        font-size: 13px;
+        font-weight: 500;
+        color: ${B.coffee};
+        text-decoration: none;
+        border-radius: 6px;
+        transition: background 0.15s, color 0.15s;
+        white-space: nowrap;
+      }
+      .nav-dropdown-link:hover { background: ${B.offWhite}; color: ${B.butterscotch}; }
+
       @media (max-width: 768px) {
         .desktop-only { display: none !important; }
         .hamburger { display: flex !important; }
